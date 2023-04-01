@@ -1,0 +1,36 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.7.11",
+    "heartbeatAt": "2023-03-28T10:18:38.373097",
+    "startedAt": "2023-03-28T10:18:36.974916",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:/Users/eviatar/PycharmProjects/NeuralNetworksForImages/wandb demo.py",
+    "codePath": "wandb demo.py",
+    "host": "DESKTOP-5IK3Q22",
+    "username": "eviatar",
+    "executable": "C:\\Users\\eviatar\\PycharmProjects\\NeuralNetworksForImages\\venv\\Scripts\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1792.0,
+        "min": 0.0,
+        "max": 1992.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1792.0,
+            "min": 0.0,
+            "max": 1992.0
+        }
+    ],
+    "disk": {
+        "total": 460.54784774780273,
+        "used": 293.88369369506836
+    },
+    "memory": {
+        "total": 15.747657775878906
+    }
+}

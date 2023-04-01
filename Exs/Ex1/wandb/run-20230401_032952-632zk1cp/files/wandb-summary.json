@@ -1,0 +1,1 @@
+{"test_acc": 62, "_timestamp": 1680309003.4875429, "_runtime": 10.785278797149658, "_step": 500, "test_loss": 1.450077772140503, "final_acc": 62, "_wandb": {"runtime": 9}}

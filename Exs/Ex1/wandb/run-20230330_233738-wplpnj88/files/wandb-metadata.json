@@ -1,0 +1,36 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.7.11",
+    "heartbeatAt": "2023-03-30T20:37:39.557250",
+    "startedAt": "2023-03-30T20:37:38.066633",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:/Users/eviatar/PycharmProjects/NeuralNetworksForImages/Exs/Ex1/standard CNN.py",
+    "codePath": "standard CNN.py",
+    "host": "DESKTOP-5IK3Q22",
+    "username": "eviatar",
+    "executable": "C:\\Users\\eviatar\\PycharmProjects\\NeuralNetworksForImages\\venv\\Scripts\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1792.0,
+        "min": 0.0,
+        "max": 1992.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1792.0,
+            "min": 0.0,
+            "max": 1992.0
+        }
+    ],
+    "disk": {
+        "total": 460.54784774780273,
+        "used": 296.9896430969238
+    },
+    "memory": {
+        "total": 15.747657775878906
+    }
+}

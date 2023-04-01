@@ -1,0 +1,5 @@
+2023-04-01 03:12:35,968 INFO    StreamThr :21032 [internal.py:wandb_internal():90] W&B internal server running at pid: 21032, started at: 2023-04-01 03:12:35.968264
+2023-04-01 03:12:35,977 DEBUG   HandlerThread:21032 [handler.py:handle_request():144] handle_request: status
+2023-04-01 03:12:35,984 INFO    WriterThread:21032 [datastore.py:open_for_write():85] open: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_031235-7gxeh7vx\run-7gxeh7vx.wandb
+2023-04-01 03:12:35,984 DEBUG   SenderThread:21032 [sender.py:send():336] send: header
+2023-04-01 03:12:35,984 DEBUG   SenderThread:21032 [sender.py:send():336] send: run

@@ -1,0 +1,1095 @@
+2023-04-01 02:45:59,592 INFO    StreamThr :4472 [internal.py:wandb_internal():90] W&B internal server running at pid: 4472, started at: 2023-04-01 02:45:59.592312
+2023-04-01 02:45:59,592 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status
+2023-04-01 02:45:59,607 INFO    WriterThread:4472 [datastore.py:open_for_write():85] open: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\run-ixypa5zl.wandb
+2023-04-01 02:45:59,607 DEBUG   SenderThread:4472 [sender.py:send():336] send: header
+2023-04-01 02:45:59,607 DEBUG   SenderThread:4472 [sender.py:send():336] send: run
+2023-04-01 02:46:00,245 INFO    SenderThread:4472 [dir_watcher.py:__init__():219] watching files in: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files
+2023-04-01 02:46:00,245 INFO    SenderThread:4472 [sender.py:_start_run_threads():1081] run started: ixypa5zl with start time 1680306359.592312
+2023-04-01 02:46:00,245 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:46:00,245 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:46:00,252 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: check_version
+2023-04-01 02:46:00,252 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: check_version
+2023-04-01 02:46:00,667 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: run_start
+2023-04-01 02:46:00,689 DEBUG   HandlerThread:4472 [system_info.py:__init__():31] System info init
+2023-04-01 02:46:00,689 DEBUG   HandlerThread:4472 [system_info.py:__init__():46] System info init done
+2023-04-01 02:46:00,689 INFO    HandlerThread:4472 [system_monitor.py:start():183] Starting system monitor
+2023-04-01 02:46:00,689 INFO    SystemMonitor:4472 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2023-04-01 02:46:00,689 INFO    HandlerThread:4472 [system_monitor.py:probe():204] Collecting system info
+2023-04-01 02:46:00,697 INFO    SystemMonitor:4472 [interfaces.py:start():187] Started cpu monitoring
+2023-04-01 02:46:00,697 DEBUG   HandlerThread:4472 [system_info.py:probe():195] Probing system
+2023-04-01 02:46:00,702 INFO    SystemMonitor:4472 [interfaces.py:start():187] Started disk monitoring
+2023-04-01 02:46:00,712 INFO    SystemMonitor:4472 [interfaces.py:start():187] Started memory monitoring
+2023-04-01 02:46:00,722 INFO    SystemMonitor:4472 [interfaces.py:start():187] Started network monitoring
+2023-04-01 02:46:00,732 DEBUG   HandlerThread:4472 [git.py:repo():40] git repository is invalid
+2023-04-01 02:46:00,732 DEBUG   HandlerThread:4472 [system_info.py:probe():240] Probing system done
+2023-04-01 02:46:00,732 DEBUG   HandlerThread:4472 [system_monitor.py:probe():213] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.7.11', 'heartbeatAt': '2023-03-31T23:46:00.702410', 'startedAt': '2023-03-31T23:45:59.577210', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:/Users/eviatar/PycharmProjects/NeuralNetworksForImages/Exs/Ex1/standard CNN.py', 'codePath': 'standard CNN.py', 'host': 'DESKTOP-5IK3Q22', 'username': 'eviatar', 'executable': 'C:\\Users\\eviatar\\PycharmProjects\\NeuralNetworksForImages\\venv\\Scripts\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1792.0, 'min': 0.0, 'max': 1992.0}, 'cpu_freq_per_core': [{'current': 1792.0, 'min': 0.0, 'max': 1992.0}], 'disk': {'total': 460.54784774780273, 'used': 298.8638381958008}, 'memory': {'total': 15.747657775878906}}
+2023-04-01 02:46:00,732 INFO    HandlerThread:4472 [system_monitor.py:probe():214] Finished collecting system info
+2023-04-01 02:46:00,732 INFO    HandlerThread:4472 [system_monitor.py:probe():217] Publishing system info
+2023-04-01 02:46:00,732 DEBUG   HandlerThread:4472 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-04-01 02:46:00,732 DEBUG   HandlerThread:4472 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-01 02:46:00,732 INFO    HandlerThread:4472 [system_monitor.py:probe():219] Finished publishing system info
+2023-04-01 02:46:00,742 DEBUG   SenderThread:4472 [sender.py:send():336] send: files
+2023-04-01 02:46:00,742 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-metadata.json with policy now
+2023-04-01 02:46:00,753 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:46:00,753 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:46:01,024 DEBUG   SenderThread:4472 [sender.py:send():336] send: telemetry
+2023-04-01 02:46:01,247 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-metadata.json
+2023-04-01 02:46:01,247 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\requirements.txt
+2023-04-01 02:46:01,252 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:46:01,762 INFO    wandb-upload_0:4472 [upload_job.py:push():138] Uploaded file C:\Users\eviatar\AppData\Local\Temp\tmpvy8d0a10wandb\es1g97od-wandb-metadata.json
+2023-04-01 02:46:02,247 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:46:04,262 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:46:04,707 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:09,737 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:13,635 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:46:13,635 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:46:13,635 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:46:13,635 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:46:14,307 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:46:15,661 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:15,773 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:46:15,773 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:46:16,315 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:46:21,103 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:24,277 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:46:24,277 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:46:24,277 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:46:24,283 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:46:24,363 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:46:26,297 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:26,375 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:46:30,784 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:46:30,784 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:46:32,102 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:33,399 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\config.yaml
+2023-04-01 02:46:35,417 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:46:35,417 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:46:35,417 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:46:35,422 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:46:36,412 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:46:37,428 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:38,417 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:46:42,457 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:45,798 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:46:45,798 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:46:47,397 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:46:47,397 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:46:47,397 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:46:47,402 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:46:47,472 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:46:48,411 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:50,485 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:46:53,437 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:58,473 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:46:59,302 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:46:59,302 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:46:59,302 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:46:59,307 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:46:59,707 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:46:59,707 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:47:00,731 DEBUG   SystemMonitor:4472 [system_monitor.py:_start():161] Starting system metrics aggregation loop
+2023-04-01 02:47:00,732 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:47:00,795 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:47:00,795 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:47:04,092 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:09,217 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:12,357 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:47:12,361 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:47:12,362 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:47:12,362 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:47:12,807 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:47:14,380 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:14,809 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:47:15,812 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:47:15,812 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:47:20,294 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:25,311 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:30,339 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:30,677 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:47:30,682 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:47:30,682 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:47:30,682 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:47:30,737 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:47:30,816 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:47:30,816 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:47:30,912 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:47:32,922 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:47:36,165 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:41,177 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:43,217 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:47:43,217 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:47:43,217 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:47:43,217 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:47:43,997 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:47:43,997 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:47:45,844 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:47:45,844 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:47:47,133 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:52,146 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:55,922 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:47:55,922 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:47:55,922 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:47:55,922 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:47:56,042 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:47:57,949 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:47:58,062 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:48:00,747 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:48:00,858 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:48:00,858 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:48:03,198 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:08,221 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:09,824 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:48:09,824 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:48:09,824 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:48:09,832 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:48:10,155 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:48:10,155 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:48:13,878 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:15,854 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:48:15,854 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:48:19,223 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:23,248 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:48:23,248 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:48:23,252 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:48:23,252 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:48:24,254 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:24,254 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:48:24,254 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:48:29,286 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:30,752 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:48:30,862 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:48:30,862 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:48:35,183 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:35,202 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:48:35,202 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:48:35,202 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:48:35,202 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:48:35,347 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:48:36,356 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:48:40,226 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:45,252 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:45,897 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:48:45,897 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:48:50,272 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:48:53,716 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:48:53,716 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:48:53,716 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:48:53,721 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:48:54,612 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:48:54,612 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:48:55,734 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:00,751 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:00,767 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:49:00,911 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:49:00,911 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:49:06,210 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:07,101 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:49:07,101 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:49:07,101 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:49:07,101 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:49:07,769 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:49:08,788 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:49:12,136 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:15,918 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:49:15,918 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:49:17,225 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:19,665 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:49:19,665 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:49:19,665 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:49:19,665 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:49:19,873 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:49:20,877 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:49:22,696 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:27,726 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:30,271 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:49:30,271 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:49:30,271 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:49:30,276 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:49:30,776 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:49:30,921 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:49:30,921 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:49:30,969 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:49:32,981 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:49:33,235 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:38,267 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:40,801 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:49:40,801 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:49:40,801 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:49:40,806 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:49:41,034 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:49:43,056 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:49:43,830 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:45,923 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:49:45,923 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:49:49,426 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:49:52,334 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:49:52,335 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:49:52,335 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:49:52,338 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:49:53,142 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:49:53,143 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:49:55,361 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:00,391 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:00,791 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:50:00,925 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:50:00,926 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:50:05,961 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:50:08,874 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:50:11,014 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:50:14,616 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:50:14,616 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:14,616 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:50:14,616 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:50:15,358 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:50:15,927 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:50:15,927 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:50:17,496 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:50:20,944 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:50:21,886 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:50:22,679 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:50:22,679 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:22,679 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:50:22,681 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:50:23,545 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:50:25,546 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:50:27,701 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:30,806 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:50:30,937 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:50:30,937 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:50:30,937 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:50:33,569 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:34,837 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:50:34,838 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:50:34,838 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:50:34,842 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:50:35,660 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:50:37,677 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:50:38,862 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:43,895 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:45,931 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:50:45,931 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:50:46,596 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:50:47,744 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:50:47,744 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:50:47,744 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:50:48,748 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:50:49,764 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:50:49,780 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:54,832 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:50:58,456 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:50:58,461 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:50:58,461 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:50:58,462 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:50:58,844 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:50:59,848 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:51:00,469 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:00,821 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:51:00,949 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:51:00,949 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:51:06,265 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:10,271 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:51:10,276 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:51:10,276 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:51:10,276 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:51:10,936 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:51:11,288 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:11,944 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:51:15,971 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:51:15,971 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:51:17,259 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:22,279 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:24,467 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:51:24,467 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:51:24,467 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:51:24,471 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:51:25,024 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:51:26,027 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:51:27,472 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:30,828 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:51:30,973 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:51:30,973 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:51:30,973 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:51:33,278 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:35,622 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:51:35,622 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:51:35,622 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:51:35,626 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:51:36,084 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:51:38,101 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:51:38,636 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:43,660 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:45,978 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:51:45,978 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:51:45,978 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:51:46,331 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:51:46,331 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:51:46,331 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:51:46,331 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:51:47,207 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:51:47,207 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:51:49,345 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:54,366 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:51:58,916 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:51:58,916 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:51:58,916 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:51:58,921 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:51:59,359 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:51:59,361 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:51:59,934 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:00,844 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:52:00,988 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:52:00,988 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:52:00,988 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:52:05,301 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:10,320 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:10,751 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:52:10,756 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:52:10,756 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:52:10,756 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:52:11,526 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:52:11,526 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:52:15,786 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:16,009 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:52:16,011 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:52:16,011 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:52:21,318 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:22,821 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:52:22,826 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:52:22,826 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:52:22,826 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:52:23,664 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:52:23,664 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:52:26,851 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:30,851 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:52:31,031 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:52:31,031 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:52:31,031 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:52:32,314 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:37,396 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:39,216 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:52:39,216 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:52:39,216 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:52:39,216 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:52:40,024 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:52:40,024 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:52:43,245 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:46,039 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:52:46,039 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:52:46,041 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:52:48,404 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:51,557 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:52:51,557 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:52:51,557 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:52:51,561 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:52:52,193 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:52:53,578 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:52:54,216 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:52:58,625 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:00,854 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:53:00,921 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:53:00,921 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:53:00,921 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:53:00,921 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:53:01,045 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:53:01,045 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:53:01,284 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:53:02,286 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:53:04,328 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:08,621 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:53:08,621 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:53:08,621 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:53:08,621 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:53:09,345 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:53:09,632 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:10,358 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:53:14,676 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:16,056 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:53:16,061 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:53:16,061 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:53:16,061 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:53:16,061 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:53:16,061 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:53:16,061 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:53:16,391 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:53:18,395 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:53:20,381 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:23,635 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:53:23,636 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:53:23,636 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:53:23,638 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:53:24,429 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:53:25,659 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:26,457 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:53:30,702 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:30,859 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:53:31,064 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:53:31,065 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:53:34,530 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:53:34,531 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:53:34,531 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:53:34,532 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:53:35,529 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:53:36,535 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:53:36,549 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:41,747 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:46,064 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:53:46,064 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:53:47,446 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:53,140 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:53:58,391 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:00,892 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:54:01,066 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:54:01,066 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:54:02,656 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:54:02,661 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:54:02,661 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:54:02,661 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:54:02,751 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:54:03,672 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:03,776 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:54:08,705 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:13,715 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:16,085 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:54:16,085 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:54:17,211 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:54:17,216 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:54:17,216 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:54:17,216 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:54:18,010 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:54:19,240 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:20,035 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:54:24,277 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:29,324 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:30,596 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:54:30,596 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:54:30,596 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:54:30,596 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:54:30,898 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:54:31,107 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:54:31,107 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:54:31,170 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:54:32,215 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:54:34,376 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:39,841 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:45,772 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:46,121 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:54:46,121 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:54:51,503 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:56,091 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:54:56,091 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:54:56,091 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:54:56,091 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:54:57,022 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:54:57,180 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:54:59,052 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:55:00,905 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:55:01,142 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:55:01,142 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:55:02,475 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:07,517 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:07,660 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:55:07,660 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:55:07,660 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:55:07,660 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:55:08,249 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:55:09,260 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:55:12,679 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:16,145 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:55:16,145 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:55:18,473 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:20,935 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:55:20,940 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:55:20,940 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:55:20,940 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:55:21,564 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:55:22,568 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:55:23,954 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:28,410 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:55:28,410 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:55:28,410 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:55:28,410 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:55:28,621 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:55:29,415 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:30,644 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:55:30,914 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:55:31,169 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:55:31,169 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:55:34,464 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:37,042 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:55:37,042 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:55:37,042 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:55:37,042 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:55:37,720 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:55:38,730 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:55:40,054 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:44,455 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:55:44,455 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:55:44,455 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:55:44,460 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:55:44,796 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:55:44,796 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:55:45,461 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:46,179 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:55:46,179 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:55:50,526 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:51,670 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:55:51,670 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:55:51,670 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:55:51,670 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:55:51,881 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:55:52,885 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:55:55,690 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:55:58,740 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:55:58,740 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:55:58,740 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:55:58,740 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:55:58,926 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:00,757 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:00,916 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:56:00,932 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:56:01,205 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:56:01,205 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:56:01,205 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:56:06,714 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:07,745 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:56:07,745 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:56:07,745 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:56:07,745 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:56:08,023 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:09,028 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:56:11,766 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:14,955 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:56:14,955 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:56:14,955 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:56:14,955 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:56:15,107 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:16,205 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:56:16,205 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:56:16,205 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:56:17,116 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:56:17,578 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:22,609 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:23,300 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:56:23,300 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:56:23,300 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:56:23,308 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:56:24,200 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:25,205 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:56:28,325 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:30,880 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:56:30,880 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:56:30,880 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:56:30,880 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:56:30,924 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:56:31,227 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:56:31,227 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:56:31,227 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:56:31,275 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:33,297 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:56:33,503 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:38,461 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:56:38,461 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:56:38,461 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:56:38,461 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:56:39,347 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:56:39,347 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:39,474 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:44,492 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:46,231 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:56:46,231 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:56:46,231 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:56:46,742 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:56:46,742 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:56:46,742 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:56:46,742 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:56:47,440 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:49,471 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:56:49,788 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:54,804 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:56:56,450 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:56:56,450 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:56:56,450 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:56:56,450 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:56:56,555 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:56:59,581 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:00,471 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:00,932 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:57:01,250 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:57:01,250 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:57:01,250 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:57:04,305 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:57:04,305 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:57:04,305 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:57:04,309 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:57:04,640 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:57:05,645 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:06,314 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:11,332 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:12,431 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:57:12,431 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:57:12,431 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:57:12,431 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:57:12,825 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:57:13,832 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:16,260 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:57:16,260 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:57:16,260 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:57:16,593 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:19,740 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:57:19,740 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:57:19,740 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:57:19,745 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:57:19,900 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:57:20,915 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:21,758 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:26,773 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:28,363 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:57:28,363 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:57:28,363 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:57:28,363 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:57:29,110 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:29,110 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:57:30,943 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:57:31,278 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:57:31,278 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:57:31,278 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:57:32,582 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:36,993 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:57:36,993 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:57:36,993 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:57:36,993 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:57:37,217 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:57:37,994 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:39,230 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:43,011 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:46,295 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:57:46,295 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:57:46,295 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:57:48,030 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:57:48,030 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:48,030 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:57:48,030 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:57:48,030 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:57:48,354 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:57:49,371 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:53,049 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:57:56,560 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:57:56,560 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:57:56,560 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:57:56,565 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:57:57,455 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:57:57,455 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:57:58,568 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:00,957 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:58:01,291 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:58:01,307 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:58:01,307 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:58:03,595 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:04,505 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:58:04,505 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:58:04,505 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:58:04,505 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:58:04,521 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:58:05,543 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:58:09,531 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:13,414 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:58:13,420 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:58:13,420 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:58:13,420 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:58:13,636 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:58:15,436 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:15,660 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:58:16,295 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:58:16,311 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:58:16,311 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:58:20,707 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:21,363 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:58:21,363 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:58:21,363 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:58:21,363 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:58:21,725 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:58:23,748 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:58:26,375 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:30,955 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:58:30,955 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:58:30,955 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:58:30,955 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:58:30,960 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:58:31,311 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:58:31,311 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:58:31,311 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:58:31,630 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:31,875 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:58:31,875 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:58:36,642 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:41,694 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:42,990 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:58:42,990 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:58:42,990 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:58:42,990 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:58:43,034 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:58:46,080 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:58:46,320 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:58:46,320 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:58:46,320 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:58:47,140 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:52,186 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:58:52,472 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:58:52,480 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:58:52,480 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:58:52,480 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:58:53,170 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:58:54,171 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:58:57,526 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:00,975 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:59:01,341 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:59:01,341 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:59:01,341 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:59:01,754 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:59:01,754 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:59:01,760 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:59:01,760 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:59:02,232 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:59:02,771 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:03,247 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:59:07,805 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:10,009 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:59:10,009 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:59:10,009 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:59:10,009 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:59:10,277 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:59:11,292 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:59:13,028 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:16,347 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:59:16,347 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:59:16,347 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:59:17,914 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:59:17,914 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:59:17,914 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:59:17,914 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:59:18,334 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:59:18,924 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:19,337 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:59:23,975 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:26,310 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:59:26,310 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:59:26,310 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:59:26,313 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:59:26,361 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:59:27,376 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:59:29,333 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:30,975 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 02:59:31,357 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:59:31,357 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:59:31,357 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:59:34,654 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:38,132 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:59:38,133 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:59:38,134 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:59:38,135 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:59:38,425 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:59:39,437 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:59:40,153 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:45,183 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:46,290 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:59:46,291 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:59:46,292 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:59:46,293 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:59:46,370 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:59:46,371 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 02:59:46,371 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:59:46,485 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:59:47,501 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:59:50,567 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:59:54,722 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 02:59:54,722 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 02:59:54,722 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:59:54,730 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:59:55,535 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 02:59:55,535 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 02:59:55,741 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:00,763 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:00,986 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 03:00:01,379 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:00:01,379 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:00:01,379 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:00:02,172 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:00:02,173 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:00:02,173 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:00:02,173 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:00:02,606 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:00:03,607 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:00:06,209 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:10,435 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:00:10,440 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:00:10,440 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:00:10,440 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:00:10,639 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:00:11,452 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:11,642 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:00:16,400 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:00:16,400 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:00:16,400 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:00:16,690 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:17,774 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:00:17,774 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:00:17,774 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:00:17,774 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:00:18,676 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:00:19,677 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:00:21,804 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:26,860 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:30,431 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:00:30,431 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:00:30,431 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:00:30,431 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:00:30,754 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:00:30,991 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 03:00:31,411 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:00:31,411 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:00:31,411 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:00:31,760 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:00:32,797 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:37,850 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:38,171 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:00:38,171 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:00:38,172 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:00:38,173 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:00:38,834 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:00:39,836 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:00:43,199 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:45,469 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:00:45,469 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:00:45,469 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:00:45,469 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:00:45,897 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:00:45,897 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:00:46,419 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:00:46,435 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:00:46,436 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:00:48,725 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:52,806 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:00:52,807 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:00:52,807 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:00:52,808 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:00:52,953 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:00:53,809 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:00:53,961 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:00:58,845 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:00,749 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:01:00,749 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:01:00,749 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:01:00,749 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:01:00,994 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 03:01:01,010 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:01:01,424 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:01:01,439 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:01:01,439 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:01:02,022 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:01:04,771 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:08,432 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:01:08,434 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:01:08,434 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:01:08,435 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:01:09,080 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:01:10,092 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:01:10,443 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:15,465 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:16,425 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:01:16,441 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:01:16,442 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:01:18,089 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:01:18,089 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:01:18,089 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:01:18,089 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:01:18,167 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:01:20,183 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:01:21,113 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:25,219 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:01:25,219 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:01:25,219 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:01:25,219 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:01:25,232 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:01:26,223 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:26,239 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:01:31,002 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 03:01:31,433 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:01:31,465 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:01:31,466 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:01:31,750 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:32,944 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:01:32,944 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:01:32,947 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:01:32,947 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:01:33,281 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:01:34,290 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:01:37,071 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:42,048 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:46,454 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:01:46,474 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:01:46,479 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:01:46,479 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:01:46,479 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:01:46,484 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:01:46,484 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:01:47,420 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:01:47,833 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:48,429 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:01:52,888 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:01:54,759 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:01:54,759 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:01:54,759 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:01:54,767 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:01:55,481 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:01:56,497 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:01:58,815 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:02:01,008 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 03:02:01,460 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-01 03:02:01,475 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 03:02:01,476 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 03:02:04,169 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:02:04,169 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:02:04,169 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:02:04,169 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:02:04,169 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:02:04,572 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:02:06,584 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:02:08,604 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:02:10,126 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:02:10,784 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:02:10,789 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:02:10,789 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:02:10,789 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:02:10,789 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:02:10,789 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:02:10,789 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:02:10,789 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:02:11,638 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:02:11,874 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-01 03:02:11,874 DEBUG   SenderThread:4472 [sender.py:send():336] send: history
+2023-04-01 03:02:11,874 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 03:02:11,874 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:02:11,874 DEBUG   SenderThread:4472 [sender.py:send():336] send: telemetry
+2023-04-01 03:02:11,874 DEBUG   SenderThread:4472 [sender.py:send():336] send: exit
+2023-04-01 03:02:11,874 INFO    SenderThread:4472 [sender.py:send_exit():559] handling exit code: 0
+2023-04-01 03:02:11,874 INFO    SenderThread:4472 [sender.py:send_exit():561] handling runtime: 971
+2023-04-01 03:02:11,874 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:02:11,879 INFO    SenderThread:4472 [sender.py:send_exit():567] send defer
+2023-04-01 03:02:11,879 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:11,879 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-01 03:02:11,879 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:11,879 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 0
+2023-04-01 03:02:11,879 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 1
+2023-04-01 03:02:11,879 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:11,879 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-01 03:02:11,879 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:11,879 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 1
+2023-04-01 03:02:11,879 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 2
+2023-04-01 03:02:11,879 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:11,879 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-01 03:02:11,879 INFO    HandlerThread:4472 [system_monitor.py:finish():193] Stopping system monitor
+2023-04-01 03:02:11,884 DEBUG   SystemMonitor:4472 [system_monitor.py:_start():168] Finished system metrics aggregation loop
+2023-04-01 03:02:11,884 DEBUG   SystemMonitor:4472 [system_monitor.py:_start():172] Publishing last batch of metrics
+2023-04-01 03:02:11,884 INFO    HandlerThread:4472 [interfaces.py:finish():199] Joined cpu monitor
+2023-04-01 03:02:11,884 INFO    HandlerThread:4472 [interfaces.py:finish():199] Joined disk monitor
+2023-04-01 03:02:11,884 INFO    HandlerThread:4472 [interfaces.py:finish():199] Joined memory monitor
+2023-04-01 03:02:11,884 INFO    HandlerThread:4472 [interfaces.py:finish():199] Joined network monitor
+2023-04-01 03:02:11,884 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:11,884 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 2
+2023-04-01 03:02:11,884 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 3
+2023-04-01 03:02:11,884 DEBUG   SenderThread:4472 [sender.py:send():336] send: stats
+2023-04-01 03:02:11,884 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:11,884 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-01 03:02:11,884 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:11,884 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 3
+2023-04-01 03:02:11,884 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 4
+2023-04-01 03:02:11,884 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:11,884 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-01 03:02:11,884 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:11,889 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 4
+2023-04-01 03:02:11,889 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 5
+2023-04-01 03:02:11,889 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:11,889 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-01 03:02:11,889 DEBUG   SenderThread:4472 [sender.py:send():336] send: summary
+2023-04-01 03:02:11,889 INFO    SenderThread:4472 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 03:02:11,889 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:11,889 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 5
+2023-04-01 03:02:11,889 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 6
+2023-04-01 03:02:11,889 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:11,889 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-01 03:02:11,889 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:11,889 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 6
+2023-04-01 03:02:11,889 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 03:02:12,254 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 7
+2023-04-01 03:02:12,255 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:12,255 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-01 03:02:12,256 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:12,256 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 7
+2023-04-01 03:02:12,645 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:02:12,645 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\config.yaml
+2023-04-01 03:02:12,645 INFO    Thread-17 :4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:02:12,890 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-01 03:02:14,020 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 8
+2023-04-01 03:02:14,020 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: poll_exit
+2023-04-01 03:02:14,020 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:14,020 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-01 03:02:14,020 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:14,020 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 8
+2023-04-01 03:02:14,029 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 9
+2023-04-01 03:02:14,029 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:14,029 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-01 03:02:14,029 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:14,029 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 9
+2023-04-01 03:02:14,029 INFO    SenderThread:4472 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-01 03:02:14,662 INFO    SenderThread:4472 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:02:14,662 INFO    SenderThread:4472 [dir_watcher.py:finish():395] scan: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files
+2023-04-01 03:02:14,662 INFO    SenderThread:4472 [dir_watcher.py:finish():409] scan save: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\config.yaml config.yaml
+2023-04-01 03:02:14,662 INFO    SenderThread:4472 [dir_watcher.py:finish():409] scan save: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log output.log
+2023-04-01 03:02:14,677 INFO    SenderThread:4472 [dir_watcher.py:finish():409] scan save: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\requirements.txt requirements.txt
+2023-04-01 03:02:14,684 INFO    SenderThread:4472 [dir_watcher.py:finish():409] scan save: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-metadata.json wandb-metadata.json
+2023-04-01 03:02:14,690 INFO    SenderThread:4472 [dir_watcher.py:finish():409] scan save: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json wandb-summary.json
+2023-04-01 03:02:14,699 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 10
+2023-04-01 03:02:14,699 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:14,699 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-01 03:02:14,699 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:14,699 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 10
+2023-04-01 03:02:14,699 INFO    SenderThread:4472 [file_pusher.py:finish():164] shutting down file pusher
+2023-04-01 03:02:15,781 INFO    wandb-upload_1:4472 [upload_job.py:push():138] Uploaded file C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\output.log
+2023-04-01 03:02:15,960 INFO    wandb-upload_3:4472 [upload_job.py:push():138] Uploaded file C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\wandb-summary.json
+2023-04-01 03:02:16,030 INFO    wandb-upload_0:4472 [upload_job.py:push():138] Uploaded file C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\config.yaml
+2023-04-01 03:02:16,608 INFO    wandb-upload_2:4472 [upload_job.py:push():138] Uploaded file C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\files\requirements.txt
+2023-04-01 03:02:16,817 INFO    Thread-16 :4472 [sender.py:transition_state():587] send defer: 11
+2023-04-01 03:02:16,817 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:16,818 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-01 03:02:16,818 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:16,818 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 11
+2023-04-01 03:02:16,818 INFO    SenderThread:4472 [file_pusher.py:join():169] waiting for file pusher
+2023-04-01 03:02:16,818 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 12
+2023-04-01 03:02:16,818 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:16,818 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-01 03:02:16,818 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:16,818 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 12
+2023-04-01 03:02:17,662 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 13
+2023-04-01 03:02:17,662 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:17,662 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-01 03:02:17,662 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:17,662 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 13
+2023-04-01 03:02:17,662 INFO    SenderThread:4472 [sender.py:transition_state():587] send defer: 14
+2023-04-01 03:02:17,662 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: defer
+2023-04-01 03:02:17,662 INFO    HandlerThread:4472 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-01 03:02:17,662 DEBUG   SenderThread:4472 [sender.py:send():336] send: final
+2023-04-01 03:02:17,662 DEBUG   SenderThread:4472 [sender.py:send():336] send: footer
+2023-04-01 03:02:17,662 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: defer
+2023-04-01 03:02:17,662 INFO    SenderThread:4472 [sender.py:send_request_defer():583] handle sender defer: 14
+2023-04-01 03:02:17,663 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-01 03:02:17,664 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: server_info
+2023-04-01 03:02:17,664 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-01 03:02:17,664 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-01 03:02:17,666 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: poll_exit
+2023-04-01 03:02:17,666 DEBUG   SenderThread:4472 [sender.py:send_request():363] send_request: server_info
+2023-04-01 03:02:18,533 DEBUG   HandlerThread:4472 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-01 03:02:18,533 INFO    HandlerThread:4472 [handler.py:finish():842] shutting down handler
+2023-04-01 03:02:18,680 INFO    WriterThread:4472 [datastore.py:close():298] close: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024559-ixypa5zl\run-ixypa5zl.wandb
+2023-04-01 03:02:19,549 INFO    SenderThread:4472 [sender.py:finish():1504] shutting down sender
+2023-04-01 03:02:19,550 INFO    SenderThread:4472 [file_pusher.py:finish():164] shutting down file pusher
+2023-04-01 03:02:19,550 INFO    SenderThread:4472 [file_pusher.py:join():169] waiting for file pusher

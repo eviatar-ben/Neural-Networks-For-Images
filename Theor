@@ -1,0 +1,52 @@
+Formally show that the condition L[x(i+k)](j) = L[x(i)](j+k) over a linear operator L receiving a 1D signal x(i) with offset k (the outer parentheses refer to the output signal), corresponds to a convolution. L operates over signals, i.e., it receives an input signal and outputs a signal, and the output signal index is denoted by j. Hint: decompose the signal x(i) into a weighted sum of translated delta functions, and then use the linearity of L. What input signal will output the underlining filter of the convolution?
+To show that the condition Lx(i+k) = Lx(i) corresponds to a convolution, we can start by decomposing the signal x(i) into a weighted sum of translated delta functions. Specifically, we can write:
+
+x(i) = sum_n x(n) * delta(i - n)
+
+where delta(i - n) is a delta function shifted by n.
+
+Using the linearity of L, we can apply it to each term in this sum:
+
+Lx(i) = Lsum_n x(n) * delta(i - n)
+
+= sum_n x(n) * Ldelta(i - n)
+
+Now, let's consider the shifted signal x(i+k):
+
+x(i+k) = sum_n x(n) * delta(i+k - n)
+
+Substituting this into the first condition, we get:
+
+Lx(i+k) = Lsum_n x(n) * delta(i+k - n)
+
+= sum_n x(n) * Ldelta(i+k - n)
+
+= sum_n x(n) * Ldelta(i - (n-k))
+
+= sum_n x(n) * Ldelta(i - n + k)
+
+= sum_n x(n) * L[delta(i - n)](j + k)
+
+= Lx(i)
+
+Therefore, we have shown that the condition Lx(i+k) = Lx(i) corresponds to a convolution, where the input signal to the filter is x(i) and the filter itself is L[delta(i)].
+
+This makes sense because convolution is defined as the integral of the product of two functions, one of which is reversed and shifted. In this case, the filter L[delta(i)] represents the response of the linear operator to a delta function at the origin, which is the impulse response of the filter. The convolution of x(i) with this impulse response gives the output signal of the linear operator L.
+
+So, the underlying filter of the convolution is L[delta(i)], the response of the linear operator to a delta function at the origin.
+
+
+
+
+The convolution operator is LTI (linear translation invariant). What about the following operators:
+The ReLU activation function
+The strided pooling layer (i.e., the one that always picks the top-right pixel in each block).
+The addition of a bias
+Multiplication with a fully-connected matrix
+The ReLU activation function is a nonlinear operator, and therefore it is not LTI. A signal passing through a ReLU function will undergo a nonlinear transformation, which depends on the input signal. As a result, the output of a ReLU function is not simply a shifted and scaled version of the input, making it non-translation-invariant.
+
+The strided pooling layer is also a nonlinear operator and therefore not LTI. The pooling operation takes a window of pixels and reduces it to a single value, which is then used as the output of that block. This operation is not linear and depends on the values of the pixels in the window. Moreover, striding means that not all pixels are used, making it also non-translation-invariant.
+
+The addition of a bias is a linear operator and is LTI. The bias term is simply added to every output element of the signal, which can be seen as a shift in the output values. Therefore, the output of the operator is a shifted version of the input, making it translation-invariant.
+
+Multiplication with a fully-connected matrix is a linear operator and is also LTI. The matrix multiplication operation takes a vector of input values and applies a linear transformation to it, which is determined by the weights in the matrix. The output of this operation is a linear combination of the input values, making it a shifted and scaled version of the input signal. This operation is also translation-invariant since the same linear transformation is applied to all elements of the signal.

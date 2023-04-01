@@ -1,0 +1,138 @@
+2023-04-01 02:41:02,988 INFO    StreamThr :15168 [internal.py:wandb_internal():90] W&B internal server running at pid: 15168, started at: 2023-04-01 02:41:02.988158
+2023-04-01 02:41:02,993 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status
+2023-04-01 02:41:03,003 INFO    WriterThread:15168 [datastore.py:open_for_write():85] open: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\run-juy8er9m.wandb
+2023-04-01 02:41:03,008 DEBUG   SenderThread:15168 [sender.py:send():336] send: header
+2023-04-01 02:41:03,008 DEBUG   SenderThread:15168 [sender.py:send():336] send: run
+2023-04-01 02:41:03,683 INFO    SenderThread:15168 [dir_watcher.py:__init__():219] watching files in: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\files
+2023-04-01 02:41:03,683 INFO    SenderThread:15168 [sender.py:_start_run_threads():1081] run started: juy8er9m with start time 1680306062.988157
+2023-04-01 02:41:03,683 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: summary_record
+2023-04-01 02:41:03,683 INFO    SenderThread:15168 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-04-01 02:41:03,683 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: check_version
+2023-04-01 02:41:03,683 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: check_version
+2023-04-01 02:41:04,293 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: run_start
+2023-04-01 02:41:04,313 DEBUG   HandlerThread:15168 [system_info.py:__init__():31] System info init
+2023-04-01 02:41:04,318 DEBUG   HandlerThread:15168 [system_info.py:__init__():46] System info init done
+2023-04-01 02:41:04,318 INFO    HandlerThread:15168 [system_monitor.py:start():183] Starting system monitor
+2023-04-01 02:41:04,318 INFO    SystemMonitor:15168 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2023-04-01 02:41:04,318 INFO    HandlerThread:15168 [system_monitor.py:probe():204] Collecting system info
+2023-04-01 02:41:04,323 INFO    SystemMonitor:15168 [interfaces.py:start():187] Started cpu monitoring
+2023-04-01 02:41:04,333 DEBUG   HandlerThread:15168 [system_info.py:probe():195] Probing system
+2023-04-01 02:41:04,333 INFO    SystemMonitor:15168 [interfaces.py:start():187] Started disk monitoring
+2023-04-01 02:41:04,343 INFO    SystemMonitor:15168 [interfaces.py:start():187] Started memory monitoring
+2023-04-01 02:41:04,353 INFO    SystemMonitor:15168 [interfaces.py:start():187] Started network monitoring
+2023-04-01 02:41:04,358 DEBUG   HandlerThread:15168 [git.py:repo():40] git repository is invalid
+2023-04-01 02:41:04,358 DEBUG   HandlerThread:15168 [system_info.py:probe():240] Probing system done
+2023-04-01 02:41:04,358 DEBUG   HandlerThread:15168 [system_monitor.py:probe():213] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.7.11', 'heartbeatAt': '2023-03-31T23:41:04.333065', 'startedAt': '2023-03-31T23:41:02.958008', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:/Users/eviatar/PycharmProjects/NeuralNetworksForImages/Exs/Ex1/standard CNN.py', 'codePath': 'standard CNN.py', 'host': 'DESKTOP-5IK3Q22', 'username': 'eviatar', 'executable': 'C:\\Users\\eviatar\\PycharmProjects\\NeuralNetworksForImages\\venv\\Scripts\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1792.0, 'min': 0.0, 'max': 1992.0}, 'cpu_freq_per_core': [{'current': 1792.0, 'min': 0.0, 'max': 1992.0}], 'disk': {'total': 460.54784774780273, 'used': 298.85518646240234}, 'memory': {'total': 15.747657775878906}}
+2023-04-01 02:41:04,358 INFO    HandlerThread:15168 [system_monitor.py:probe():214] Finished collecting system info
+2023-04-01 02:41:04,363 INFO    HandlerThread:15168 [system_monitor.py:probe():217] Publishing system info
+2023-04-01 02:41:04,363 DEBUG   HandlerThread:15168 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-04-01 02:41:04,363 DEBUG   HandlerThread:15168 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-01 02:41:04,363 INFO    HandlerThread:15168 [system_monitor.py:probe():219] Finished publishing system info
+2023-04-01 02:41:04,373 DEBUG   SenderThread:15168 [sender.py:send():336] send: files
+2023-04-01 02:41:04,373 INFO    SenderThread:15168 [sender.py:_save_file():1332] saving file wandb-metadata.json with policy now
+2023-04-01 02:41:04,398 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:41:04,400 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:41:04,698 INFO    Thread-38 :15168 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\files\wandb-summary.json
+2023-04-01 02:41:04,698 INFO    Thread-38 :15168 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\files\wandb-metadata.json
+2023-04-01 02:41:04,698 INFO    Thread-38 :15168 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\files\requirements.txt
+2023-04-01 02:41:04,816 DEBUG   SenderThread:15168 [sender.py:send():336] send: telemetry
+2023-04-01 02:41:05,698 INFO    Thread-38 :15168 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\files\output.log
+2023-04-01 02:41:06,182 INFO    wandb-upload_0:15168 [upload_job.py:push():138] Uploaded file C:\Users\eviatar\AppData\Local\Temp\tmpc02gwjjvwandb\tr1lnrkl-wandb-metadata.json
+2023-04-01 02:41:07,700 INFO    Thread-38 :15168 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\files\output.log
+2023-04-01 02:41:08,398 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:13,425 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:18,458 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:19,389 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:41:19,389 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:41:23,725 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:28,738 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:33,769 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:34,396 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:41:34,396 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:41:34,827 INFO    Thread-38 :15168 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\eviatar\PycharmProjects\NeuralNetworksForImages\Exs\Ex1\wandb\run-20230401_024102-juy8er9m\files\config.yaml
+2023-04-01 02:41:39,873 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:44,909 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:49,422 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:41:49,422 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:41:50,703 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:41:55,715 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:00,732 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:04,364 DEBUG   SystemMonitor:15168 [system_monitor.py:_start():161] Starting system metrics aggregation loop
+2023-04-01 02:42:04,364 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:42:04,428 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:42:04,428 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:42:06,714 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:11,745 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:16,773 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:19,437 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:42:19,437 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:42:22,748 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:27,765 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:32,789 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:34,367 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:42:34,448 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:42:34,448 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:42:37,818 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:42,840 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:47,865 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:49,459 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:42:49,459 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:42:53,738 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:42:58,752 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:03,780 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:04,372 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:43:04,483 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:43:04,483 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:43:08,802 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:13,822 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:18,902 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:19,476 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:43:19,476 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:43:24,781 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:29,807 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:34,382 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:43:34,494 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:43:34,494 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:43:35,789 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:40,799 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:45,818 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:49,513 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:43:49,513 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:43:51,822 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:43:56,842 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:01,857 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:04,395 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:44:04,507 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:44:04,507 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:44:07,814 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:12,837 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:17,865 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:19,521 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:44:19,522 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:44:23,868 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:28,896 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:33,913 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:34,409 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:44:34,536 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:44:34,536 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:44:39,823 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:44,841 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:49,547 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:44:49,547 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:44:50,835 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:44:55,846 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:00,895 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:04,416 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:45:04,544 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:45:04,544 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:45:06,850 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:11,870 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:16,890 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:19,551 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:45:19,552 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status
+2023-04-01 02:45:22,836 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:27,862 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:32,890 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: status_report
+2023-04-01 02:45:34,422 DEBUG   SenderThread:15168 [sender.py:send():336] send: stats
+2023-04-01 02:45:34,563 DEBUG   HandlerThread:15168 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-01 02:45:34,563 DEBUG   SenderThread:15168 [sender.py:send_request():363] send_request: stop_status

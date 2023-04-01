@@ -1,0 +1,15 @@
+Files already downloaded and verified
+Files already downloaded and verified
+[1,  2000] loss: 2.171
+[1,  4000] loss: 1.821
+[1,  6000] loss: 1.662
+[1,  8000] loss: 1.570
+[1, 10000] loss: 1.505
+[1, 12000] loss: 1.483
+[2,  2000] loss: 1.401
+[2,  4000] loss: 1.358
+[2,  6000] loss: 1.342
+[2,  8000] loss: 1.303
+[2, 10000] loss: 1.274
+[2, 12000] loss: 1.250
+Finished Training
