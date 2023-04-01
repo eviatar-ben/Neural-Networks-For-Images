@@ -6,10 +6,15 @@ import wandb
 import torch.optim as optim
 
 from Exs.Ex1 import BaseLineNet
+from Exs.Ex1 import Multiple_FC_Net
 from Exs.Ex1 import Net
 
-RUN = 'BaseLine'
-# RUN = 'MyNet'
+# RUN = 'BaseLine'
+# RUN = 'Multiple_FC_Net'
+RUN = 'Net'
+
+# WB = False
+WB = True
 
 EPOCHS = 15
 LR = 0.001
@@ -41,59 +46,83 @@ def load_data():
 
 
 def init_w_and_b():
-    wandb.init(
-        # Set the project where this run will be logged
-        project="NN4I_Ex1 ",
-        # We pass a run name (otherwise it’ll be randomly assigned, like sunshine-lollypop-10)
-        name=f"experiment_{RUN}_{EPOCHS}_epochs",
-        # Track hyperparameters and run metadata
-        config={
-            "learning_rate": LR,
-            "architecture": "CNN",
-            "dataset": "CIFAR-10",
-            "epochs": EPOCHS,
-        })
+    if WB:
+        wandb.init(
+            # Set the project where this run will be logged
+            project="NN4I_Ex1 ",
+            # We pass a run name (otherwise it’ll be randomly assigned, like sunshine-lollypop-10)
+            name=f"experiment_{RUN}_{EPOCHS}_epochs",
+            # Track hyperparameters and run metadata
+            config={
+                "learning_rate": LR,
+                "architecture": "CNN",
+                "dataset": "CIFAR-10",
+                "epochs": EPOCHS,
+            })
 
 
-def load_and_test(testloader, PATH='./cifar_net.pth'):
+def load_and_test(testloader, valloader=None, PATH=''):
     if RUN == 'BaseLine':
+        PATH = f'./{RUN}_{EPOCHS}.pth'
         net = BaseLineNet.BaseLineNet()
+    elif RUN == 'Multiple_FC_Net':
+        PATH = f'./{RUN}_{EPOCHS}.pth'
+        net = Multiple_FC_Net.MultipleFCNet()
+    elif RUN == "Net":
+        PATH = f'./{RUN}_{EPOCHS}.pth'
+        net = Net.Net()
     else:
         net = Net.Net()
+        raise Exception
 
     net.load_state_dict(torch.load(PATH))
+    net.eval()  # set to evaluation mode
+
     correct = 0
     total = 0
     criterion = nn.CrossEntropyLoss()
+    test_loss = 0.0
 
-    # since we're not training, we don't need to calculate the gradients for our outputs
     with torch.no_grad():
         for i, data in enumerate(testloader):
             images, labels = data
-            # calculate outputs by running images through the network
             outputs = net(images)
-            # the class with the highest energy is what we choose as prediction
+            loss = criterion(outputs, labels)
+            test_loss += loss.item() * images.size(0)
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
-            # cross entropy loss
-            loss = criterion(outputs, labels)
-            if i % 20 == 19:  # print every 10 mini-batches
-                wandb.log({"test_acc": 100 * correct // total})
-                wandb.log({"test_loss": loss})
 
-    acc = 100 * correct // total
-    wandb.log({"final_acc": 100 * correct // total})
-    print(f'Accuracy of the network on the 10000 test images: {acc} %')
+    test_loss /= len(testloader.dataset)
+    test_acc = 100.0 * correct / total
+
+    if valloader:
+        with torch.no_grad():
+            running_val_loss = 0.0
+            for i, data in enumerate(valloader, 0):
+                inputs, labels = data
+                outputs = net(inputs)
+                loss = criterion(outputs, labels)
+                running_val_loss += loss.item()
+            val_loss = running_val_loss / len(valloader)
+
+
+    if WB:
+        wandb.log({"test_loss": test_loss})
+        wandb.log({"test_acc": test_acc})
+    print(f'Accuracy of the network on the 10000 test images: {test_acc} %')
 
 
 def build_and_train(trainloader):
     if RUN == 'BaseLine':
         net = BaseLineNet.BaseLineNet()
+    elif RUN == 'Multiple_FC_Net':
+        net = Multiple_FC_Net.MultipleFCNet()
     else:
         net = Net.Net()
 
     criterion = nn.CrossEntropyLoss()
+    # optimizer = torch.optim.Adam(net.parameters())
     optimizer = optim.SGD(net.parameters(), lr=LR, momentum=0.9)
 
     for epoch in range(EPOCHS):  # loop over the dataset multiple times
@@ -117,12 +146,13 @@ def build_and_train(trainloader):
             if i % 2000 == 1999:  # print every 2000 mini-batches
                 print(f'[{epoch + 1}, {i + 1:5d}] loss: {running_loss / 2000:.3f}')
                 running_loss = 0.0
-                # wandb.log({"acc": acc, "loss": loss})
-                wandb.log({"epoch": epoch, "train_loss": loss})
+                if WB:
+                    # wandb.log({"acc": acc, "loss": loss})
+                    wandb.log({"epoch": epoch, "train_loss": loss})
 
     print('Finished Training')
 
-    PATH = f'./cifar_net_{RUN}_{EPOCHS}_{LR}.pth'
+    PATH = f'./{RUN}_{EPOCHS}.pth'
     torch.save(net.state_dict(), PATH)
 
 
@@ -131,9 +161,16 @@ def main():
     trainset, trainloader, testset, testloader, classes = load_data()
     build_and_train(trainloader)
     load_and_test(testloader)
-    wandb.finish()
+    if WB:
+        wandb.finish()
 
 
 if __name__ == '__main__':
-    wandb.login()
+    import sys
+
+    if WB:
+        wandb.login()
+    if len(sys.argv) == 2:
+        param = {1: 'BaseLine', 2: 'Multiple_FC_Net', 3: 'Net'}
+        RUN = param[int(sys.argv[1])]
     main()
