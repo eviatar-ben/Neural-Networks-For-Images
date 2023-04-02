@@ -187,7 +187,8 @@ def build_and_train(trainloader, testloader):
         calculate_test_loss(net, testloader)
 
     print('Finished Training')
-    wandb.log({"number of parameters": sum(p.numel() for p in net.parameters() if p.requires_grad)})
+    if WB:
+        wandb.log({"number of parameters": sum(p.numel() for p in net.parameters() if p.requires_grad)})
     print(sum(p.numel() for p in net.parameters() if p.requires_grad))
     PATH = f'./{RUN}_{EPOCHS}.pth'
     torch.save(net.state_dict(), PATH)
