@@ -11,7 +11,9 @@ from Exs.Ex1 import Net
 
 # RUN = 'BaseLine'
 # RUN = 'Multiple_FC_Net'
+# RUN = 'ComplexNet'
 RUN = 'Net'
+
 
 # WB = False
 WB = True
@@ -51,7 +53,8 @@ def init_w_and_b():
             # Set the project where this run will be logged
             project="NN4I_Ex1 ",
             # We pass a run name (otherwise it’ll be randomly assigned, like sunshine-lollypop-10)
-            name=f"experiment_{RUN}_{EPOCHS}_epochs",
+            name=f"{RUN}_{EPOCHS}_epochs",
+            notes='',
             # Track hyperparameters and run metadata
             config={
                 "learning_rate": LR,
@@ -71,6 +74,10 @@ def load_and_test(testloader, valloader=None, PATH=''):
     elif RUN == "Net":
         PATH = f'./{RUN}_{EPOCHS}.pth'
         net = Net.Net()
+    elif RUN == 'ComplexNet':
+        PATH = f'./{RUN}_{EPOCHS}.pth'
+        net = Net.ComplexNet()
+
     else:
         net = Net.Net()
         raise Exception
@@ -106,6 +113,30 @@ def load_and_test(testloader, valloader=None, PATH=''):
                 running_val_loss += loss.item()
             val_loss = running_val_loss / len(valloader)
 
+    if WB:
+        wandb.log({"test_loss": test_loss})
+        wandb.log({"test_acc": test_acc})
+    print(f'Accuracy of the network on the 10000 test images: {test_acc} %')
+
+
+def calculate_test_loss(net, testloader):
+    correct = 0
+    total = 0
+    criterion = nn.CrossEntropyLoss()
+    test_loss = 0.0
+
+    with torch.no_grad():
+        for i, data in enumerate(testloader):
+            images, labels = data
+            outputs = net(images)
+            loss = criterion(outputs, labels)
+            test_loss += loss.item() * images.size(0)
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+
+    test_loss /= len(testloader.dataset)
+    test_acc = 100.0 * correct / total
 
     if WB:
         wandb.log({"test_loss": test_loss})
@@ -113,11 +144,15 @@ def load_and_test(testloader, valloader=None, PATH=''):
     print(f'Accuracy of the network on the 10000 test images: {test_acc} %')
 
 
-def build_and_train(trainloader):
+def build_and_train(trainloader, testloader):
     if RUN == 'BaseLine':
         net = BaseLineNet.BaseLineNet()
     elif RUN == 'Multiple_FC_Net':
         net = Multiple_FC_Net.MultipleFCNet()
+    elif RUN == "Net":
+        net = Net.Net()
+    elif RUN == 'ComplexNet':
+        net = Net.ComplexNet()
     else:
         net = Net.Net()
 
@@ -149,9 +184,11 @@ def build_and_train(trainloader):
                 if WB:
                     # wandb.log({"acc": acc, "loss": loss})
                     wandb.log({"epoch": epoch, "train_loss": loss})
+        calculate_test_loss(net, testloader)
 
     print('Finished Training')
-
+    wandb.log({"number of parameters": sum(p.numel() for p in net.parameters() if p.requires_grad)})
+    print(sum(p.numel() for p in net.parameters() if p.requires_grad))
     PATH = f'./{RUN}_{EPOCHS}.pth'
     torch.save(net.state_dict(), PATH)
 
@@ -159,8 +196,8 @@ def build_and_train(trainloader):
 def main():
     init_w_and_b()
     trainset, trainloader, testset, testloader, classes = load_data()
-    build_and_train(trainloader)
-    load_and_test(testloader)
+    build_and_train(trainloader, testloader)
+    # load_and_test(testloader)
     if WB:
         wandb.finish()
 
