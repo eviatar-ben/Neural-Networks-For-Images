@@ -21,3 +21,9 @@ class BaseLineNet(nn.Module):
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
+
+
+if __name__ == '__main__':
+    net = BaseLineNet()
+    print(sum(p.numel() for p in net.parameters() if p.requires_grad))
+    pass

@@ -11,14 +11,17 @@ from Exs.Ex1 import Net
 
 # RUN = 'BaseLine'
 # RUN = 'Multiple_FC_Net'
-# RUN = 'ComplexNet'
-RUN = 'Net'
+RUN = 'ComplexNet'
+# RUN = 'Net'
+# RUN = "SimpleNet"
 
+DESCRIPTION = "NonLinear"
+# DESCRIPTION = ""
 
 # WB = False
 WB = True
 
-EPOCHS = 15
+EPOCHS = 12
 LR = 0.001
 
 
@@ -51,9 +54,10 @@ def init_w_and_b():
     if WB:
         wandb.init(
             # Set the project where this run will be logged
+            group="Exploring baseline net",
             project="NN4I_Ex1 ",
             # We pass a run name (otherwise it’ll be randomly assigned, like sunshine-lollypop-10)
-            name=f"{RUN}_{EPOCHS}_epochs",
+            name=f"{DESCRIPTION}{RUN}_{EPOCHS}_epochs",
             notes='',
             # Track hyperparameters and run metadata
             config={
@@ -61,6 +65,7 @@ def init_w_and_b():
                 "architecture": "CNN",
                 "dataset": "CIFAR-10",
                 "epochs": EPOCHS,
+
             })
 
 
@@ -77,9 +82,10 @@ def load_and_test(testloader, valloader=None, PATH=''):
     elif RUN == 'ComplexNet':
         PATH = f'./{RUN}_{EPOCHS}.pth'
         net = Net.ComplexNet()
-
+    elif RUN == 'SimpleNet':
+        PATH = f'./{RUN}_{EPOCHS}.pth'
+        net = Net.SimpleNet()
     else:
-        net = Net.Net()
         raise Exception
 
     net.load_state_dict(torch.load(PATH))
@@ -153,6 +159,8 @@ def build_and_train(trainloader, testloader):
         net = Net.Net()
     elif RUN == 'ComplexNet':
         net = Net.ComplexNet()
+    elif RUN == 'SimpleNet':
+        net = Net.SimpleNet()
     else:
         net = Net.Net()
 
