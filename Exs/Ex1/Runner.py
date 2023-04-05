@@ -15,8 +15,8 @@ RUN = 'ComplexNet'
 # RUN = 'Net'
 # RUN = "SimpleNet"
 
-DESCRIPTION = "NonLinear"
-# DESCRIPTION = ""
+# DESCRIPTION = "NonLinear"
+DESCRIPTION = ""
 
 # WB = False
 WB = True
@@ -54,11 +54,11 @@ def init_w_and_b():
     if WB:
         wandb.init(
             # Set the project where this run will be logged
-            group="Exploring baseline net",
+            group="Linear and Non Linear",
             project="NN4I_Ex1 ",
             # We pass a run name (otherwise it’ll be randomly assigned, like sunshine-lollypop-10)
             name=f"{DESCRIPTION}{RUN}_{EPOCHS}_epochs",
-            notes='',
+            notes='checking if log is work properly',
             # Track hyperparameters and run metadata
             config={
                 "learning_rate": LR,
@@ -120,8 +120,7 @@ def load_and_test(testloader, valloader=None, PATH=''):
             val_loss = running_val_loss / len(valloader)
 
     if WB:
-        wandb.log({"test_loss": test_loss})
-        wandb.log({"test_acc": test_acc})
+        wandb.log({"test_loss": test_loss, "test_acc": test_acc})
     print(f'Accuracy of the network on the 10000 test images: {test_acc} %')
 
 
@@ -144,10 +143,8 @@ def calculate_test_loss(net, testloader):
     test_loss /= len(testloader.dataset)
     test_acc = 100.0 * correct / total
 
-    if WB:
-        wandb.log({"test_loss": test_loss})
-        wandb.log({"test_acc": test_acc})
     print(f'Accuracy of the network on the 10000 test images: {test_acc} %')
+    return test_loss, test_acc
 
 
 def build_and_train(trainloader, testloader):
@@ -167,7 +164,7 @@ def build_and_train(trainloader, testloader):
     criterion = nn.CrossEntropyLoss()
     # optimizer = torch.optim.Adam(net.parameters())
     optimizer = optim.SGD(net.parameters(), lr=LR, momentum=0.9)
-
+    loss = 0
     for epoch in range(EPOCHS):  # loop over the dataset multiple times
 
         running_loss = 0.0
@@ -189,10 +186,10 @@ def build_and_train(trainloader, testloader):
             if i % 2000 == 1999:  # print every 2000 mini-batches
                 print(f'[{epoch + 1}, {i + 1:5d}] loss: {running_loss / 2000:.3f}')
                 running_loss = 0.0
-                if WB:
-                    # wandb.log({"acc": acc, "loss": loss})
-                    wandb.log({"epoch": epoch, "train_loss": loss})
-        calculate_test_loss(net, testloader)
+        if WB:
+            test_loss, test_acc = calculate_test_loss(net, testloader)
+            wandb.log({"train_loss": loss, 'test_loss': test_loss, "test_acc": test_acc})
+            # wandb.log({"acc": acc, "loss": loss})
 
     print('Finished Training')
     if WB:
