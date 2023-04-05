@@ -18,8 +18,8 @@ RUN = 'ComplexNet'
 # DESCRIPTION = "NonLinear"
 DESCRIPTION = ""
 
-# WB = False
-WB = True
+WB = False
+# WB = True
 
 EPOCHS = 12
 LR = 0.001
