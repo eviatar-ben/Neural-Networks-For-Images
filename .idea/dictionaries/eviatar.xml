@@ -5,6 +5,7 @@
       <w>testset</w>
       <w>trainloader</w>
       <w>trainset</w>
+      <w>wandb</w>
     </words>
   </dictionary>
 </component>
