@@ -3,6 +3,51 @@ import torch.nn as nn
 CLASSES_NUM = 10
 
 
+# class ComplexNet(nn.Module):
+#     def __init__(self):
+#         super(ComplexNet, self).__init__()
+#         self.conv1 = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, padding=1)
+#         self.bn1 = nn.BatchNorm2d(32)
+#         self.relu1 = nn.ReLU()
+#         self.conv2 = nn.Conv2d(in_channels=32, out_channels=32, kernel_size=3, padding=1)
+#         self.bn2 = nn.BatchNorm2d(32)
+#         self.relu2 = nn.ReLU()
+#         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
+#         self.conv3 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1)
+#         self.bn3 = nn.BatchNorm2d(64)
+#         self.relu3 = nn.ReLU()
+#         self.conv4 = nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, padding=1)
+#         self.bn4 = nn.BatchNorm2d(64)
+#         self.relu4 = nn.ReLU()
+#         self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
+#         # Fully-connected layer
+#         self.fc1 = nn.Linear(in_features=65536, out_features=10)
+#
+#     def forward(self, x):
+#         import torch
+#         # Convolutional layers
+#         x = self.conv1(x)
+#         # x = self.bn1(x)
+#         # x = self.relu1(x)
+#         x = self.conv2(x)
+#         # x = self.bn2(x)
+#         # x = self.relu2(x)
+#         # x = self.pool1(x)
+#         x = self.conv3(x)
+#         # x = self.bn3(x)
+#         # x = self.relu3(x)
+#         x = self.conv4(x)
+#         # x = self.bn4(x)
+#         # x = self.relu4(x)
+#         # x = self.pool2(x)
+#         # Flatten
+#         x = torch.flatten(x, start_dim=1)
+#         # x = x.view(x.size(0), -1)
+#         # Fully-connected layer
+#         x = self.fc1(x)
+#
+#         return x
+
 class ComplexNet(nn.Module):
     def __init__(self):
         super(ComplexNet, self).__init__()
@@ -20,8 +65,11 @@ class ComplexNet(nn.Module):
         self.bn4 = nn.BatchNorm2d(64)
         self.relu4 = nn.ReLU()
         self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.conv5 = nn.Conv2d(in_channels=64, out_channels=32, kernel_size=3, padding=1)
+        self.conv6 = nn.Conv2d(in_channels=32, out_channels=16, kernel_size=3, padding=1)
+
         # Fully-connected layer
-        self.fc1 = nn.Linear(in_features=65536, out_features=10)
+        self.fc1 = nn.Linear(in_features=16384, out_features=10)
 
     def forward(self, x):
         import torch
@@ -40,6 +88,9 @@ class ComplexNet(nn.Module):
         # x = self.bn4(x)
         # x = self.relu4(x)
         # x = self.pool2(x)
+        x= self.conv5(x)
+        x= self.conv6(x)
+
         # Flatten
         x = torch.flatten(x, start_dim=1)
         # x = x.view(x.size(0), -1)
@@ -47,7 +98,6 @@ class ComplexNet(nn.Module):
         x = self.fc1(x)
 
         return x
-
 
 # Basic Net with one Linear FC layer
 
@@ -93,6 +143,98 @@ class SimpleNet(nn.Module):
 
         x = self.fc1(x)
         x = self.softmax(x)
+        return x
+
+
+class AssesCascade1(nn.Module):
+    def __init__(self):
+        super(ComplexNet, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, padding=1)
+        self.relu1 = nn.ReLU()
+        # self.conv2 = nn.Conv2d(in_channels=32, out_channels=32, kernel_size=3, padding=1)
+        # self.bn2 = nn.BatchNorm2d(32)
+        # self.relu2 = nn.ReLU()
+        # self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # self.conv3 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1)
+        # self.bn3 = nn.BatchNorm2d(64)
+        # self.relu3 = nn.ReLU()
+        # self.conv4 = nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, padding=1)
+        # self.bn4 = nn.BatchNorm2d(64)
+        # self.relu4 = nn.ReLU()
+        # self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # self.conv5 = nn.Conv2d(in_channels=64, out_channels=16, kernel_size=3, padding=1)
+        # Fully-connected layer
+        self.fc1 = nn.Linear(in_features=32768, out_features=10)
+
+    def forward(self, x):
+        import torch
+        # Convolutional layers
+        x = self.conv1(x)
+        # x = self.bn1(x)
+        x = self.relu1(x)
+        # x = self.conv2(x)
+        # x = self.bn2(x)
+        # x = self.relu2(x)
+        # x = self.pool1(x)
+        # x = self.conv3(x)
+        # x = self.bn3(x)
+        # x = self.relu3(x)
+        # x = self.conv4(x)
+        # x = self.bn4(x)
+        # x = self.relu4(x)
+        # x = self.pool2(x)
+        # Flatten
+        x = torch.flatten(x, start_dim=1)
+        # x = x.view(x.size(0), -1)
+        # Fully-connected layer
+        x = self.fc1(x)
+
+        return x
+
+
+class AssesCascade2(nn.Module):
+    def __init__(self):
+        super(ComplexNet, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, padding=1)
+        self.relu1 = nn.ReLU()
+        # self.conv2 = nn.Conv2d(in_channels=32, out_channels=32, kernel_size=3, padding=1)
+        # self.bn2 = nn.BatchNorm2d(32)
+        # self.relu2 = nn.ReLU()
+        # self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # self.conv3 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1)
+        # self.bn3 = nn.BatchNorm2d(64)
+        # self.relu3 = nn.ReLU()
+        # self.conv4 = nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, padding=1)
+        # self.bn4 = nn.BatchNorm2d(64)
+        # self.relu4 = nn.ReLU()
+        # self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # self.conv5 = nn.Conv2d(in_channels=64, out_channels=16, kernel_size=3, padding=1)
+        # Fully-connected layer
+        self.fc1 = nn.Linear(in_features=32768, out_features=10)
+
+    def forward(self, x):
+        import torch
+        # Convolutional layers
+        x = self.conv1(x)
+        # x = self.bn1(x)
+        x = self.relu1(x)
+        # x = self.conv2(x)
+        # x = self.bn2(x)
+        # x = self.relu2(x)
+        # x = self.pool1(x)
+        # x = self.conv3(x)
+        # x = self.bn3(x)
+        # x = self.relu3(x)
+        # x = self.conv4(x)
+        # x = self.bn4(x)
+        # x = self.relu4(x)
+        # x = self.pool2(x)
+        # Flatten
+        x = torch.flatten(x, start_dim=1)
+        # x = x.view(x.size(0), -1)
+        # Fully-connected layer
+        x = self.fc1(x)
+
         return x
 
 

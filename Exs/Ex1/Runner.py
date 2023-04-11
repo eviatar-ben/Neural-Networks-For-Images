@@ -15,13 +15,15 @@ RUN = 'ComplexNet'
 # RUN = 'Net'
 # RUN = "SimpleNet"
 
+# 252890
+
 # DESCRIPTION = "NonLinear"
 DESCRIPTION = ""
 
-WB = False
-# WB = True
+# WB = False
+WB = True
 
-EPOCHS = 12
+EPOCHS = 9
 LR = 0.001
 
 
