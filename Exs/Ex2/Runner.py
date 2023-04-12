@@ -106,7 +106,6 @@ def load_data():
 
 
 def train_and_test(trainloader, testloader, d=D):
-    # set wandb new plot per current d value
 
     random_seed = 1
     torch.backends.cudnn.enabled = False
@@ -137,6 +136,7 @@ def train_and_test(trainloader, testloader, d=D):
         return cur_train_loss / len(trainloader)
 
     def test():
+        criterion = nn.MSELoss()
         # model.eval()  # todo: check this out
         test_loss = 0
         with torch.no_grad():
@@ -154,19 +154,17 @@ def train_and_test(trainloader, testloader, d=D):
         train_loss = train()
         test_loss = test()
         if WB:
-            wandb.log({"train_loss": train_loss, 'test_loss': test_loss})
-            # wandb.log({"acc": acc, "loss": loss})
+            wandb.log({"train_loss": train_loss, 'test_loss': test_loss}, step=epoch)
 
 
-def init_w_and_b():
+def init_w_and_b(d=D):
     if WB:
         wandb.init(
             # Set the project where this run will be logged
-            group="Auto-Encoding",
+            group="Auto-Encoding_latent_dimensions",
             project="NN4I_Ex2 ",
-            # We pass a run name (otherwise it’ll be randomly assigned, like sunshine-lollypop-10)
-            name=f"{DESCRIPTION}{RUN}_{EPOCHS}_epochs",
-            notes='checking if log is work properly',
+            name=f"{DESCRIPTION}{RUN}{d}",
+            notes='',
             # Track hyperparameters and run metadata
             config={
                 "learning_rate": LR,
@@ -178,12 +176,13 @@ def init_w_and_b():
 
 
 def main():
-    init_w_and_b()
     trainloader, testloader = load_data()
     for d in range(5, 15):
+        # set wandb new plot per current d value
+        init_w_and_b(d)
         train_and_test(trainloader, testloader, d)
-    if WB:
-        wandb.finish()
+        if WB:
+            wandb.finish()
 
 
 if __name__ == '__main__':
