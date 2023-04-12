@@ -45,6 +45,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Exs\Ex2\latent_dimension.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Exs\Ex2\layers_number.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\wandb demo.py">
           <value>
             <Attribute>

@@ -13,17 +13,12 @@ WB = False
 RUN = 'AE'
 EPOCHS = 9
 LR = 1e-3
-DESCRIPTION = "Latent_dimension_higher_dims"
+DESCRIPTION = "Diagnosed small loss values (no tanh)"
 D = 10
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
-# todo check maybe the loss size order is small because of batch normalize  self.bn
-# Stride is the number of pixels shifts over the input matrix.
-# For padding p, filter size 𝑓∗𝑓 and input image size 𝑛 ∗ 𝑛 and stride ‘𝑠’
-# our output image dimension will be
-# [ {(𝑛 + 2𝑝 − 𝑓 + 1) / 𝑠} + 1] ∗ [ {(𝑛 + 2𝑝 − 𝑓 + 1) / 𝑠} + 1].
-
+# Diagnosed small loss values (non-normalize images and sigmoid instead of tanh)
 class Encoder(nn.Module):
 
     def __init__(self, d=D):
@@ -94,46 +89,21 @@ class Decoder(nn.Module):
 
 
 def load_data():
-    from torchvision import datasets, transforms
-    train = datasets.MNIST('', train=True, download=True,
-                           transform=transforms.Compose([
-                               transforms.ToTensor(),
-                               transforms.Normalize((0.5,), (0.5,))
-                           ]))
-
-    trainloader = torch.utils.data.DataLoader(
-        train, batch_size=128, shuffle=True, num_workers=0, pin_memory=True, )
-
-    test = datasets.MNIST('', train=False, download=True,
-                          transform=transforms.Compose([
-                              transforms.ToTensor(),
-                              transforms.Normalize((0.5,), (0.5,))
-                          ]))
-
-    testloader = torch.utils.data.DataLoader(
-        test, batch_size=128, shuffle=True, num_workers=0, pin_memory=True, )
-
-    return trainloader, testloader
-
-
-def load_data_p():
-    batch_size_train = 128
-    batch_size_test = 128
+    batch_size_train = 64
+    batch_size_test = 1000
     trainloader = torch.utils.data.DataLoader(
         torchvision.datasets.MNIST('./data', train=True, download=True,
                                    transform=torchvision.transforms.Compose([
-                                       torchvision.transforms.ToTensor()
-                                       , torchvision.transforms.Normalize((0.5,), (0.5,))
+                                       torchvision.transforms.ToTensor(),
                                    ])),
-        batch_size=batch_size_train, shuffle=True, pin_memory=True)
+        batch_size=batch_size_train, shuffle=True)
 
     testloader = torch.utils.data.DataLoader(
         torchvision.datasets.MNIST('./data', train=False, download=True,
                                    transform=torchvision.transforms.Compose([
-                                       torchvision.transforms.ToTensor()
-                                       , torchvision.transforms.Normalize((0.5,), (0.5,))
+                                       torchvision.transforms.ToTensor(),
                                    ])),
-        batch_size=batch_size_test, shuffle=True, pin_memory=True)
+        batch_size=batch_size_test, shuffle=True)
     return trainloader, testloader
 
 
@@ -160,12 +130,15 @@ def train_and_test(trainloader, testloader, d=D):
             output = decoder(latent).to(device)
 
             loss = criterion(output, img)
+
             loss.backward()
             optimizer.step()
             cur_train_loss += loss.item()
         return cur_train_loss / len(trainloader)
 
     def test():
+        criterion = nn.MSELoss()
+        # model.eval()  # todo: check this out
         test_loss = 0
         with torch.no_grad():
             for img, _ in testloader:
@@ -189,7 +162,7 @@ def init_w_and_b(d=D):
     if WB:
         wandb.init(
             # Set the project where this run will be logged
-            group="Auto-Encoding_latent_dimensions",
+            group="Diagnosed small loss values",
             project="NN4I_Ex2 ",
             name=f"{DESCRIPTION}{RUN}{d}",
             notes='',
@@ -205,7 +178,7 @@ def init_w_and_b(d=D):
 
 def main():
     trainloader, testloader = load_data()
-    for d in range(15, 16):
+    for d in range(10, 11):
         # set wandb new plot per current d value
         init_w_and_b(d)
         train_and_test(trainloader, testloader, d)
