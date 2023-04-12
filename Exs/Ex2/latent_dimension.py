@@ -7,14 +7,13 @@ from torch.autograd import Variable
 from torchvision.utils import save_image
 import wandb
 
-# WB = False
-WB = True
+WB = False
+# WB = True
 
 RUN = 'AE'
 EPOCHS = 9
 LR = 1e-3
-# DESCRIPTION = "NonLinear"
-DESCRIPTION = "First"
+DESCRIPTION = "Latent_dimension_higher_dims"
 D = 10
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -39,7 +38,7 @@ class Encoder(nn.Module):
             nn.Linear(3 * 3 * 32, 128),
             nn.ReLU(True),
             nn.Linear(128, d),
-            nn.Tanh())
+            nn.Tanh())  # tanh were examined as well as the sigmoid (tanh performance are better)
 
     def forward(self, x):
         x = self.layers(x)
@@ -106,7 +105,6 @@ def load_data():
 
 
 def train_and_test(trainloader, testloader, d=D):
-
     random_seed = 1
     torch.backends.cudnn.enabled = False
     torch.manual_seed(random_seed)
@@ -141,8 +139,8 @@ def train_and_test(trainloader, testloader, d=D):
         test_loss = 0
         with torch.no_grad():
             for img, _ in testloader:
-                latent = encoder(img)
-                output = decoder(latent)
+                latent = encoder(img).to(device)
+                output = decoder(latent).to(device)
                 test_loss += criterion(output, img).item()
 
         test_loss /= len(testloader.dataset)
@@ -177,7 +175,7 @@ def init_w_and_b(d=D):
 
 def main():
     trainloader, testloader = load_data()
-    for d in range(5, 15):
+    for d in range(100, 105):
         # set wandb new plot per current d value
         init_w_and_b(d)
         train_and_test(trainloader, testloader, d)
