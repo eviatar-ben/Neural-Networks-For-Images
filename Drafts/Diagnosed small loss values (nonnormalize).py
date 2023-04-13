@@ -90,7 +90,7 @@ class Decoder(nn.Module):
 
 def load_data():
     batch_size_train = 64
-    batch_size_test = 1000
+    batch_size_test = 64
     trainloader = torch.utils.data.DataLoader(
         torchvision.datasets.MNIST('./data', train=True, download=True,
                                    transform=torchvision.transforms.Compose([
@@ -181,7 +181,7 @@ def main():
     for d in range(10, 11):
         # set wandb new plot per current d value
         init_w_and_b(d)
-        train_and_test(trainloader, testloader, d)
+        train_and_test(trainloader, trainloader, d)
         if WB:
             wandb.finish()
 

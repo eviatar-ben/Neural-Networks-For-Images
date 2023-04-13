@@ -19,10 +19,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
 # todo check maybe the loss size order is small because of batch normalize  self.bn
-# Stride is the number of pixels shifts over the input matrix.
-# For padding p, filter size 𝑓∗𝑓 and input image size 𝑛 ∗ 𝑛 and stride ‘𝑠’
-# our output image dimension will be
-# [ {(𝑛 + 2𝑝 − 𝑓 + 1) / 𝑠} + 1] ∗ [ {(𝑛 + 2𝑝 − 𝑓 + 1) / 𝑠} + 1].
 
 class Encoder(nn.Module):
 
@@ -57,6 +53,7 @@ class Encoder(nn.Module):
         x = self.fc1(x)
         x = self.relu4(x)
         x = self.fc2(x)
+        # x = nn.Tanh(x)
         return x
 
 
@@ -66,13 +63,15 @@ class Decoder(nn.Module):
         self.fc2 = nn.Linear(d, 128)
         self.relu4 = nn.ReLU(True)
         self.fc1 = nn.Linear(128, 3 * 3 * 32)
+        self.relu3 = nn.ReLU(True)
+
         self.unflatten = nn.Unflatten(dim=1, unflattened_size=(32, 3, 3))
 
-        self.relu3 = nn.ReLU(True)
         self.conv3 = nn.ConvTranspose2d(32, 16, 3, stride=2, output_padding=0)
         self.bn2 = nn.BatchNorm2d(16)
         self.relu2 = nn.ReLU(True)
         self.conv2 = nn.ConvTranspose2d(16, 8, 3, stride=2, padding=1, output_padding=1)
+        self.bn2 = nn.BatchNorm2d(8)
         self.relu1 = nn.ReLU(True)
         self.conv1 = nn.ConvTranspose2d(8, 1, 3, stride=2, padding=1, output_padding=1)
 
@@ -80,10 +79,10 @@ class Decoder(nn.Module):
         x = self.fc2(x)
         x = self.relu4(x)
         x = self.fc1(x)
+        x = self.relu3(x)
 
         x = self.unflatten(x)
 
-        x = self.relu3(x)
         x = self.conv3(x)
         x = self.bn2(x)
         x = self.relu2(x)
@@ -94,29 +93,6 @@ class Decoder(nn.Module):
 
 
 def load_data():
-    from torchvision import datasets, transforms
-    train = datasets.MNIST('', train=True, download=True,
-                           transform=transforms.Compose([
-                               transforms.ToTensor(),
-                               transforms.Normalize((0.5,), (0.5,))
-                           ]))
-
-    trainloader = torch.utils.data.DataLoader(
-        train, batch_size=128, shuffle=True, num_workers=0, pin_memory=True, )
-
-    test = datasets.MNIST('', train=False, download=True,
-                          transform=transforms.Compose([
-                              transforms.ToTensor(),
-                              transforms.Normalize((0.5,), (0.5,))
-                          ]))
-
-    testloader = torch.utils.data.DataLoader(
-        test, batch_size=128, shuffle=True, num_workers=0, pin_memory=True, )
-
-    return trainloader, testloader
-
-
-def load_data_p():
     batch_size_train = 128
     batch_size_test = 128
     trainloader = torch.utils.data.DataLoader(
