@@ -90,86 +90,97 @@ class Decoder(nn.Module):
 
 
 def load_data():
-    from torchvision import datasets, transforms
+    batch_size_train = 128
+    batch_size_test = 128
+    trainloader = torch.utils.data.DataLoader(
+        torchvision.datasets.MNIST('./data', train=True, download=True,
+                                   transform=torchvision.transforms.Compose([
+                                       torchvision.transforms.ToTensor()
+                                       # , torchvision.transforms.Normalize((0.5,), (0.5,))
+                                   ])),
+        batch_size=batch_size_train, shuffle=True, pin_memory=True)
 
-    train_data = datasets.MNIST(root='./data', train=True, download=True, transform=transforms.ToTensor())
-
-    trainloader = torch.utils.data.DataLoader(dataset=train_data,
-                                              batch_size=64,
-                                              shuffle=True)
-
-    test_data = datasets.MNIST(root='./data', train=False, download=True, transform=transforms.ToTensor())
-
-    testloader = torch.utils.data.DataLoader(dataset=test_data,
-                                             batch_size=64,
-                                             shuffle=True)
+    testloader = torch.utils.data.DataLoader(
+        torchvision.datasets.MNIST('./data', train=False, download=True,
+                                   transform=torchvision.transforms.Compose([
+                                       torchvision.transforms.ToTensor()
+                                       # , torchvision.transforms.Normalize((0.5,), (0.5,))
+                                   ])),
+        batch_size=batch_size_test, shuffle=True, pin_memory=True)
     return trainloader, testloader
 
 
-def plot_images(outputs):
+def plot_images(output, img):
     import matplotlib.pyplot as plt
-    for k in range(0, EPOCHS, 4):
-        plt.figure(figsize=(9, 2))
-        plt.gray()
-        imgs = outputs[k][1].detach().numpy()
-        recon = outputs[k][2].detach().numpy()
-        for i, item in enumerate(imgs):
-            if i >= 9: break
-            plt.subplot(2, 9, i + 1)
-            plt.imshow(item[0])
-
-        for i, item in enumerate(recon):
-            if i >= 9: break
-            plt.subplot(2, 9, 9 + i + 1)  # row_length + i + 1
-            plt.imshow(item[0])
+    # plt.figure(figsize=(2, 2))
+    plt.gray()
+    plt.imshow(output[0][0].detach().numpy())
+    plt.imshow(img[0][0].detach().numpy())
+    # imgs = output[k][1].detach().numpy()
+    # recon = outputs[k][2].detach().numpy()
+    # for i, item in enumerate(imgs):
+    #     if i >= 9: break
+    #     plt.subplot(2, 9, i + 1)
+    #     # item = item.reshape(-1, 28,28) # -> use for Autoencoder_Linear
+    #     # item: 1, 28, 28
+    #     plt.imshow(item[0])
+    #
+    # for i, item in enumerate(recon):
+    #     if i >= 9: break
+    #     plt.subplot(2, 9, 9 + i + 1)  # row_length + i + 1
+    #     # item = item.reshape(-1, 28,28) # -> use for Autoencoder_Linear
+    #     # item: 1, 28, 28
+    #     plt.imshow(item[0])
     return
 
 
-def test(testloader, encoder, decoder):
-    test_loss = 0
+def train_and_test(trainloader, testloader, d=D):
+    # random_seed = 1
+    # torch.backends.cudnn.enabled = False
+    # torch.manual_seed(random_seed)
+
+    encoder = Encoder(d).to(device)
+    decoder = Decoder(d).to(device)
+
     criterion = nn.MSELoss()
-    with torch.no_grad():
-        for img, _ in testloader:
+    optimizer = torch.optim.Adam(list(encoder.parameters()) + list(decoder.parameters()), lr=LR)
+
+    def train():
+        cur_train_loss = 0
+        # model.train()  # todo: check this out
+        for img, _ in trainloader:
+            optimizer.zero_grad()
+
             img = img.to(device)
 
             latent = encoder(img).to(device)
             output = decoder(latent).to(device)
 
             loss = criterion(output, img)
-            test_loss += loss.item()
-        print('\nTest set: Avg. test loss: {:.4f}\n'.format(test_loss / len(testloader)))
-    return test_loss / len(testloader)
+            loss.backward()
+            optimizer.step()
+            cur_train_loss += loss.item()
+        print('\nTest set: Avg. train loss: {:.4f}\n'.format(cur_train_loss / len(trainloader)))
+        return cur_train_loss / len(trainloader)
 
+    def test():
+        cur_test_loss = 0
+        with torch.no_grad():
+            for img, _ in testloader:
+                latent = encoder(img).to(device)
+                output = decoder(latent).to(device)
+                cur_test_loss += criterion(output, img).item()
+            # plot_images(output, img)
+        cur_test_loss /= len(testloader.dataset)
+        print('\nTrain set: Avg. test loss: {:.4f}\n'.format(cur_test_loss))
 
-def train(trainloader, encoder, decoder):
-    criterion = nn.MSELoss()
-    optimizer = torch.optim.Adam(list(encoder.parameters()) + list(decoder.parameters()), lr=LR)
-    train_loss = 0
-    for img, _ in trainloader:
-        optimizer.zero_grad()
-
-        img = img.to(device)
-
-        latent = encoder(img).to(device)
-        output = decoder(latent).to(device)
-
-        loss = criterion(output, img)
-        loss.backward()
-        optimizer.step()
-        train_loss += loss.item()
-    print('\nTrain set: Avg. train loss: {:.4f}\n'.format(train_loss / len(trainloader)))
-    return train_loss / len(trainloader)
-
-
-def train_and_test(trainloader, testloader, d=D):
-    encoder = Encoder(d).to(device)
-    decoder = Decoder(d).to(device)
+        return cur_test_loss
 
     for epoch in range(EPOCHS):
-        train_loss = train(trainloader, encoder, decoder)
-        test_loss = test(testloader, encoder, decoder)
+        train_loss = train()
+        test_loss = test()
         if WB:
-            wandb.log({"train_loss": train_loss / len(trainloader), 'test_loss': test_loss}, step=epoch)
+            wandb.log({"train_loss": train_loss, 'test_loss': test_loss}, step=epoch)
 
 
 def init_w_and_b(d=D):

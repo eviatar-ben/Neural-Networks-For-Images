@@ -3,7 +3,7 @@ import torchvision
 import torch.nn as nn
 import wandb
 
-from Exs.Ex2.AEs import Encoder1L, Encoder2L, Encoder3L, Encoder4L, Decoder1L, Decoder2L, Decoder3L, Decoder4L
+from Exs.Ex2_old.AEs import Encoder1L, Encoder2L, Encoder3L, Encoder4L, Decoder1L, Decoder2L, Decoder3L, Decoder4L
 
 WB = False
 # WB = True
