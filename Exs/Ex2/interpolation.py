@@ -7,9 +7,11 @@ from torch.autograd import Variable
 from torchvision.utils import save_image
 from Exs.Ex2.AEs import Encoder1L, Encoder2L, Encoder3L, Encoder4L, Decoder1L, Decoder2L, Decoder3L, Decoder4L
 
-TRAIN = True
+# TRAIN = True
+TRAIN = False
+
 RUN = '3L'
-EPOCHS = 10
+EPOCHS = 1
 LR = 1e-3
 DESCRIPTION = "Same d multiple number of layers"
 D = 40
@@ -77,22 +79,30 @@ def train(trainloader, encoder, decoder, epoch, outputs):
     print('\nTrain set: Avg. train loss: {:.4f}\n'.format(train_loss / len(trainloader)))
     return train_loss / len(trainloader)
 
-def get_two_dif_digits(trainloader, d= False):
+
+def get_two_dif_digits(trainloader, d=False):
     if d:
         i1, d1 = next(iter(trainloader))
+        i1, d1 = i1[0], d1[0]
         i2, d2 = next(iter(trainloader))
-        while d1 != d[0]:
+        i2, d2 = i2[0], d2[0]
+        while torch.eq(d2, d1):
             i1, d1 = next(iter(trainloader))
-        while d2 != d[1]:
+            i1, d1 = i1[0], d1[0]
+        while torch.eq(d2, d1):
             i2, d2 = next(iter(trainloader))
+            i2, d2 = i2[0], d2[0]
         return i1, i2
     i1, d1 = next(iter(trainloader))
+    i1, d1 = i1[0], d1[0]
     i2, d2 = next(iter(trainloader))
-    while d2 != d1:
+    i2, d2 = i2[0], d2[0]
+    while torch.eq(d2, d1):
         i2, d2 = next(iter(trainloader))
     return i1, i2
 
-def interpolate(encoder, decoder, trainloader, num_of_steps = 25):
+
+def interpolate(encoder, decoder, trainloader, num_of_steps=25):
     """
     D((E(I1)*a)+(E(I2)*(1-a))) for a [0,1]
     """
@@ -101,18 +111,13 @@ def interpolate(encoder, decoder, trainloader, num_of_steps = 25):
     i1, i2 = get_two_dif_digits(trainloader)
     ei1 = encoder(i1)
     ei2 = encoder(i2)
-    interpolation = []
+    interpolations = []
     for alpha in alphas:
-        noise = alpha * ei1 + (1 - alpha) * ei1
-        interpolation += [decoder(noise.unsqueeze(0)).view(-1, 28)]
+        interpolate_input = alpha * ei1 + (1 - alpha) * ei2
+        interpolations += [decoder(interpolate_input.unsqueeze(0)).view(-1, 28)]
 
-    out = torch.concat(interpolation, 1)
+    out = torch.concat(interpolations, 1)
     save_image(out, f"./plots/interpolation.png")
-
-
-
-    interpolation = []
-    for alpha in alphas:
 
 
 def train_and_interpolate(trainloader):
@@ -127,7 +132,10 @@ def train_and_interpolate(trainloader):
         torch.save(encoder.state_dict(), f'./models/encoder{RUN}.pth')
         torch.save(decoder.state_dict(), f'./models/decoder{RUN}.pth')
     else:
-        pass
+        encoder, decoder = Encoder3L(), Decoder3L()
+        encoder.load_state_dict(torch.load(f'./models/encoder{RUN}.pth'))
+        decoder.load_state_dict(torch.load(f'./models/decoder{RUN}.pth'))
+
     interpolate(encoder, decoder, trainloader)
 
 
