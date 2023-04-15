@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import wandb
 from torchvision.utils import save_image
 from Exs.Ex2.AEs import Encoder1L, Encoder2L, Encoder3L, Encoder4L, Decoder1L, Decoder2L, Decoder3L, Decoder4L
 from torch.autograd import Variable
@@ -10,11 +11,32 @@ import torchvision
 # TRAIN = True
 TRAIN = False
 
+WB = True
+# WB = False
+
 RUN = '3L'
 EPOCHS = 10
 LR = 1e-3
-DESCRIPTION = "Same d multiple number of layers"
+DESCRIPTION = "Pearson Correlation & Latent Space "
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+
+def init_w_and_b():
+    if WB:
+        wandb.init(
+            # Set the project where this run will be logged
+            group="Pearson Correlation [10-100]",
+            project="NN4I_Ex2 ",
+            name=f"{DESCRIPTION}{RUN}",
+            notes='',
+            # Track hyperparameters and run metadata
+            config={
+                "learning_rate": LR,
+                "architecture": "AE",
+                "dataset": "MNIST",
+                "epochs": EPOCHS,
+
+            })
 
 
 def load_data():
@@ -88,12 +110,27 @@ def train_and_correlate(trainloader, d):
 
 
 def explore(trainloader):
-    for d in [10, 15, 40]:
+    norms_matrix = []
+    latent_dimensions = [10, 15, 20, 25, 30, 35, 40, 80, 100]
+    for d in latent_dimensions:
         corr_matrix_norm = train_and_correlate(trainloader, d)
         print(f"latent: {d}, pearson: {corr_matrix_norm}")
+        norms_matrix.append(corr_matrix_norm)
+        if WB:
+            correlation_and_latent_dimension = [[d, n] for d, n in zip(latent_dimensions, norms_matrix)]
+            table = wandb.Table(data=correlation_and_latent_dimension, columns=["Latent Dimension",
+                                                                                "Pearson Correlation (matrix norm)"])
+            wandb.log({"Correlation_and_Latent_Dimension": wandb.plot.line(table, "Latent Dimension",
+                                                                           "Pearson Correlation (matrix norm)",
+                                                                           title="Pearson Correlation (per coordinate)"
+                                                                                 "and Latent Dimension")})
+            # wandb.log({"Latent Dimension": d, 'Pearson Correlation (matrix norm)': corr_matrix_norm})
+    return norms_matrix
 
 
 def main():
+    if WB:
+        init_w_and_b()
     trainloader, _ = load_data()
     explore(trainloader)
 
