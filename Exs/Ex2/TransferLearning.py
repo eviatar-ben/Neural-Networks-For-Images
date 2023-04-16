@@ -2,15 +2,15 @@ import torch
 import torch.nn as nn
 import wandb
 
-WB = False
-# WB = True
+# WB = False
+WB = True
 
 PLOT = not WB
 
 RUN = 'MLP'
-EPOCHS = 10
+EPOCHS = 200
 LR = 1e-3
-DESCRIPTION = "Transfer learning"
+DESCRIPTION = "Losses in small batches 500 epochs different dimension in MLP layers"
 D = 10
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -96,7 +96,8 @@ class MLP(nn.Module):
             nn.ReLU(),
             nn.Linear(64, 32),
             nn.ReLU(),
-            nn.Linear(32, 10)
+            nn.Linear(32, 10),
+            torch.nn.Sigmoid()
         )
 
     def forward(self, x):
@@ -120,75 +121,122 @@ def load_data():
     return trainloader, testloader
 
 
-def test(testloader, encoder, mlp):
+def test(testloader, learnable_encoder, learnable_encoder_mlp, non_learnable_encoder, non_learnable_encoder_mlp):
     test_loss = 0
     criterion = nn.CrossEntropyLoss()  # maybe MSE?
+    # with torch.no_grad():
+    #     for img, digits in testloader:
+    #         img = img.to(device)
+    #
+    #         latent = encoder(img).to(device)
+    #         output = mlp(latent).to(device)
+    #
+    #         loss = criterion(output, torch.nn.functional.one_hot(digits, 10).float())
+    #         test_loss += loss.item()
+    #     print('\nTest set: Avg. test loss: {:.4f}\n'.format(test_loss / len(testloader)))
+
+    non_learnable_encoder_criterion = nn.CrossEntropyLoss()  # maybe MSE?
+    learnable_encoder_criterion = nn.CrossEntropyLoss()  # maybe MSE?
+
+    non_learnable_encoder_test_loss = 0
+    learnable_encoder_test_loss = 0
+    data_fractions = 0
     with torch.no_grad():
         for img, digits in testloader:
             img = img.to(device)
+            # non learnable encoder:
+            latent_non_learnable_encoder = non_learnable_encoder(img).to(device)
+            output_non_learnable_encoder = non_learnable_encoder_mlp(latent_non_learnable_encoder).to(device)
 
-            latent = encoder(img).to(device)
-            output = mlp(latent).to(device)
+            non_learnable_encoder_loss = non_learnable_encoder_criterion(output_non_learnable_encoder,
+                                                                         torch.nn.functional.one_hot(digits,
+                                                                                                     10).float())
+            non_learnable_encoder_test_loss += non_learnable_encoder_loss.item()
 
-            loss = criterion(output, torch.nn.functional.one_hot(digits, 10).float())
-            test_loss += loss.item()
-        print('\nTest set: Avg. test loss: {:.4f}\n'.format(test_loss / len(testloader)))
-    return test_loss / len(testloader)
+            # learnable encoder:
+            latent_learnable_encoder = learnable_encoder(img).to(device)
+            output_learnable_encoder = learnable_encoder_mlp(latent_learnable_encoder).to(device)
+
+            learnable_encoder_loss = learnable_encoder_criterion(output_learnable_encoder.squeeze(),
+                                                                 torch.nn.functional.one_hot(digits, 10).float())
+            learnable_encoder_test_loss += learnable_encoder_loss.item()
+
+            if data_fractions > FRACTIONS_NUMBER:
+                # "Do this with a small fraction of the annotated training data (~ tens of images)"
+                break
+            data_fractions += 1
+    # print(f"non learnable encoder Train loss{non_learnable_encoder_train_loss}")
+    # print(f"learnable encoder Train loss{learnable_encoder_train_loss}")
+
+    return learnable_encoder_test_loss, non_learnable_encoder_test_loss
 
 
-def train(trainloader, mlp, mlp_encoder, encoder, decoder):
-    criterion = nn.CrossEntropyLoss()  # maybe MSE?
-    mlp_optimizer = torch.optim.Adam(list(mlp.parameters()), lr=LR)
-    ae_optimizer = torch.optim.Adam(list(encoder.parameters()) + list(decoder.parameters()), lr=LR)
-    mlp_train_loss = 0
-    ae_train_loss = 0
+def train(trainloader, learnable_encoder, learnable_encoder_mlp, non_learnable_encoder, non_learnable_encoder_mlp):
+    non_learnable_encoder_criterion = nn.CrossEntropyLoss()  # maybe MSE?
+    learnable_encoder_criterion = nn.CrossEntropyLoss()  # maybe MSE?
+
+    non_learnable_encoder_optimizer = torch.optim.Adam(list(non_learnable_encoder_mlp.parameters()), lr=LR)
+    learnable_encoder_optimizer = torch.optim.Adam(list(learnable_encoder.parameters()) +
+                                                   list(learnable_encoder_mlp.parameters()), lr=LR)
+
+    non_learnable_encoder_train_loss = 0
+    learnable_encoder_train_loss = 0
     data_fractions = 0
     for img, digits in trainloader:
         img = img.to(device)
+        # non learnable encoder:
+        non_learnable_encoder_optimizer.zero_grad()
 
-        mlp_optimizer.zero_grad()
+        latent_non_learnable_encoder = non_learnable_encoder(img).to(device)
+        output_non_learnable_encoder = non_learnable_encoder_mlp(latent_non_learnable_encoder).to(device)
 
-        ae_optimizer.zero_grad()
+        non_learnable_encoder_loss = non_learnable_encoder_criterion(output_non_learnable_encoder,
+                                                                     torch.nn.functional.one_hot(digits, 10).float())
+        non_learnable_encoder_loss.backward()
+        non_learnable_encoder_optimizer.step()
+        non_learnable_encoder_train_loss += non_learnable_encoder_loss.item()
 
-        latent_for_mlp = encoder(img).to(device)
-        mlp_output = mlp(latent_for_mlp).to(device)
+        # learnable encoder:
+        learnable_encoder_optimizer.zero_grad()
 
-        latent_for_ae = encoder(img).to(device)
-        ae_output = decoder(latent_for_ae).to(device)
+        latent_learnable_encoder = learnable_encoder(img).to(device)
+        output_learnable_encoder = learnable_encoder_mlp(latent_learnable_encoder).to(device)
 
-        mlp_loss = criterion(mlp_output, torch.nn.functional.one_hot(digits, 10).float())
-        mlp_loss.backward()
-        mlp_optimizer.step()
-        mlp_train_loss += mlp_loss.item()
+        learnable_encoder_loss = learnable_encoder_criterion(output_learnable_encoder.squeeze(),
+                                                             torch.nn.functional.one_hot(digits, 10).float())
+        learnable_encoder_loss.backward()
+        learnable_encoder_optimizer.step()
+        learnable_encoder_train_loss += learnable_encoder_loss.item()
 
-        ae_loss = criterion(ae_output, torch.nn.functional.one_hot(digits, 10).float())
-        ae_loss.backward()
-        ae_optimizer.step()
-        ae_train_loss += ae_loss.item()
-
-        if data_fractions > FRACTIONS_NUMBER:  # "Do this with a small fraction of the annotated training data (~ tens of images)"
+        if data_fractions > FRACTIONS_NUMBER:
+            # "Do this with a small fraction of the annotated training data (~ tens of images)"
             break
         data_fractions += 1
-    print('\nMLP Train set: Avg. train loss: {:.4f}\n'.format(mlp_train_loss / (FRACTIONS_NUMBER * DATA_FRACTION)))
-    return mlp_train_loss / len(trainloader)
+    # print(f"non learnable encoder Train loss{non_learnable_encoder_train_loss}")
+    # print(f"learnable encoder Train loss{learnable_encoder_train_loss}")
+
+    return learnable_encoder_train_loss, non_learnable_encoder_train_loss
 
 
 def train_mlp_and_test(trainloader, testloader, d=D):
     # random_seed = 1
     # torch.backends.cudnn.enabled = False
     # torch.manual_seed(random_seed)
-    encoder = Encoder(d).to(device)
-    mlp_encoder = Encoder(d).to(device)
-    decoder = Decoder(d).to(device)
-    mlp = MLP(d).to(device)
-    outputs = []
+
+    learnable_encoder = Encoder(d).to(device)
+    learnable_mlp = MLP(d).to(device)
+
+    non_learnable_encoder = Encoder(d).to(device)
+    non_learnable_encoder_mlp = MLP(d).to(device)
     for epoch in range(EPOCHS):
-        train_loss = train(trainloader, mlp, mlp_encoder, encoder, decoder)
-        # test_loss = test(testloader, encoder, mlp)
+        train_losses = train(trainloader, learnable_encoder, learnable_mlp, non_learnable_encoder,
+                             non_learnable_encoder_mlp)
+        test_losses = test(testloader, learnable_encoder, learnable_mlp, non_learnable_encoder,
+                           non_learnable_encoder_mlp)
         if WB:
-            pass  # wandb.log({"train_loss": train_loss, 'test_loss': test_loss}, step=epoch)
-    # if PLOT:
-    #     plot_images(outputs)
+            wandb.log({"Full learning train loss": train_losses[0], 'MLP learning only train loss': train_losses[1],
+                       "Full learning test loss": test_losses[0], 'MLP learning only test loss': test_losses[1]},
+                      step=epoch)
 
 
 def init_w_and_b(d=D):
@@ -197,7 +245,7 @@ def init_w_and_b(d=D):
             # Set the project where this run will be logged
             group="Transfer Learning",
             project="NN4I_Ex2 ",
-            name=f"{DESCRIPTION}{RUN}{d}",
+            name=f"{DESCRIPTION} {RUN} D{d}",
             notes='',
             # Track hyperparameters and run metadata
             config={
