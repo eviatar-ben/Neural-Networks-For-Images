@@ -8,7 +8,7 @@ WB = True
 PLOT = not WB
 
 RUN = 'MLP'
-EPOCHS = 200
+EPOCHS = 50
 LR = 1e-3
 DESCRIPTION = "Losses in small batches 500 epochs different dimension in MLP layers"
 D = 10
@@ -245,7 +245,7 @@ def init_w_and_b(d=D):
             # Set the project where this run will be logged
             group="Transfer Learning",
             project="NN4I_Ex2 ",
-            name=f"{DESCRIPTION} {RUN} D{d}",
+            name=f"{DESCRIPTION} {RUN} D{d} Epochs{EPOCHS}",
             notes='',
             # Track hyperparameters and run metadata
             config={
