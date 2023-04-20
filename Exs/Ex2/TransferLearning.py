@@ -2,16 +2,20 @@ import torch
 import torch.nn as nn
 import wandb
 
-# WB = False
-WB = True
+WB = False
+# WB = True
 
 PLOT = not WB
 
+# PRE_TRAIN = True
+PRE_TRAIN = False
+
+
 RUN = 'MLP'
-EPOCHS = 50
+EPOCHS = 10
 LR = 1e-3
-DESCRIPTION = "Losses in small batches 500 epochs different dimension in MLP layers"
-D = 10
+DESCRIPTION = "Losses in small batches pre-trained encoder"
+D = 15
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 DATA_FRACTION = 10
@@ -97,20 +101,20 @@ class MLP(nn.Module):
             nn.Linear(64, 32),
             nn.ReLU(),
             nn.Linear(32, 10),
-            torch.nn.Sigmoid()
+            torch.nn.Sigmoid()  # maybe without sigmoid
         )
 
     def forward(self, x):
         return self.layers(x)
 
 
-def load_data():
+def load_data(batch_size=DATA_FRACTION):
     from torchvision import datasets, transforms
 
     train_data = datasets.MNIST(root='./data', train=True, download=True, transform=transforms.ToTensor())
 
     trainloader = torch.utils.data.DataLoader(dataset=train_data,
-                                              batch_size=DATA_FRACTION,
+                                              batch_size=batch_size,
                                               shuffle=True)
 
     test_data = datasets.MNIST(root='./data', train=False, download=True, transform=transforms.ToTensor())
@@ -224,9 +228,11 @@ def train_mlp_and_test(trainloader, testloader, d=D):
     # torch.manual_seed(random_seed)
 
     learnable_encoder = Encoder(d).to(device)
+    # learnable_encoder.load_state_dict()
     learnable_mlp = MLP(d).to(device)
 
     non_learnable_encoder = Encoder(d).to(device)
+    non_learnable_encoder.load_state_dict(torch.load(f'./models/encoder{RUN}_{d}D.pth'))  # "pretrained"
     non_learnable_encoder_mlp = MLP(d).to(device)
     for epoch in range(EPOCHS):
         train_losses = train(trainloader, learnable_encoder, learnable_mlp, non_learnable_encoder,
@@ -243,9 +249,9 @@ def init_w_and_b(d=D):
     if WB:
         wandb.init(
             # Set the project where this run will be logged
-            group="Transfer Learning",
+            group="Transfer Learning , pre-trained encoder",
             project="NN4I_Ex2 ",
-            name=f"{DESCRIPTION} {RUN} D{d} Epochs{EPOCHS}",
+            name=f"{DESCRIPTION} {RUN} D{d}",
             notes='',
             # Track hyperparameters and run metadata
             config={
@@ -257,9 +263,48 @@ def init_w_and_b(d=D):
             })
 
 
+def pre_train(trainloader, learnable_encoder, pre_trained_mlp):
+    pre_trained_encoder_criterion = nn.CrossEntropyLoss()  # maybe MSE?
+
+    pre_trained_encoder_optimizer = torch.optim.Adam(list(learnable_encoder.parameters()), lr=LR)
+
+    pre_trained_encoder_train_loss = 0
+    data_fractions = 0
+    for img, digits in trainloader:
+        img = img.to(device)
+        pre_trained_encoder_optimizer.zero_grad()
+
+        latent_pre_trained_encoder = learnable_encoder(img).to(device)
+        output_pre_trained_encoder = pre_trained_mlp(latent_pre_trained_encoder).to(device)
+
+        pre_trained_encoder_loss = pre_trained_encoder_criterion(output_pre_trained_encoder.squeeze(),
+                                                                 torch.nn.functional.one_hot(digits, 10).float())
+        pre_trained_encoder_loss.backward()
+        pre_trained_encoder_optimizer.step()
+        pre_trained_encoder_train_loss += pre_trained_encoder_loss.item()
+
+        data_fractions += 1
+    # print(f"non learnable encoder Train loss{non_learnable_encoder_train_loss}")
+    # print(f"learnable encoder Train loss{learnable_encoder_train_loss}")
+
+    return pre_trained_encoder_train_loss
+
+
+def get_pre_train(d=D):
+    learnable_encoder = Encoder(d).to(device)
+    learnable_mlp = MLP(d).to(device)
+    trainloader, testloader = load_data(batch_size=64)
+    for epoch in range(EPOCHS):
+        train_losses = pre_train(trainloader, learnable_encoder, learnable_mlp)
+        print(train_losses)
+    torch.save(learnable_encoder.state_dict(), f'./models/encoder{RUN}_{d}D.pth')
+
+
 def main():
     if WB:
         init_w_and_b()
+    if PRE_TRAIN:
+        get_pre_train(d=D)
     trainloader, testloader = load_data()
     train_mlp_and_test(trainloader, testloader, d=D)
 

@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="C:\Users\eviatar\.PyCharm2019.3\config\scratches\scratch_56.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\eviatar\Desktop\eviatar\Study\Master degree\Master Courses\Computer Vision 3D\Ex2\3dex2.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Drafts\Diagnosed small loss values (nonnormalize).py">
           <value>
             <Attribute>
@@ -88,6 +102,13 @@
           </value>
         </entry>
         <entry key="\Exs\Ex2\layers_number.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Exs\Ex2\train_encoder.py">
           <value>
             <Attribute>
               <option name="separator" value="," />

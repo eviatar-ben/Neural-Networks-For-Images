@@ -182,7 +182,7 @@ def init_w_and_b(d=D):
     if WB:
         wandb.init(
             # Set the project where this run will be logged
-            group="Latent dimension [50-55]",
+            group="Latent dimension [100, 110]",
             project="NN4I_Ex2 ",
             name=f"{DESCRIPTION}{RUN}{d}",
             notes='',
@@ -198,7 +198,7 @@ def init_w_and_b(d=D):
 
 def main():
     trainloader, testloader = load_data()
-    for d in range(50, 56):
+    for d in range(100, 110):
         # set wandb new plot per current d value
         init_w_and_b(d)
         train_and_test(trainloader, testloader, d)
