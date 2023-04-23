@@ -2,24 +2,23 @@ import torch
 import torch.nn as nn
 import wandb
 
-WB = False
-# WB = True
+# WB = False
+WB = True
 
 PLOT = not WB
 
 # PRE_TRAIN = True
 PRE_TRAIN = False
 
-
 RUN = 'MLP'
 EPOCHS = 10
 LR = 1e-3
-DESCRIPTION = "Losses in small batches pre-trained encoder"
+DESCRIPTION = "Losses in small batches pre-trained encoder from previous task"
 D = 15
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 DATA_FRACTION = 10
-FRACTIONS_NUMBER = 10
+FRACTIONS_NUMBER = 4
 
 
 class Encoder(nn.Module):
@@ -106,6 +105,24 @@ class MLP(nn.Module):
 
     def forward(self, x):
         return self.layers(x)
+
+
+def init_w_and_b(d=D):
+    if WB:
+        wandb.init(
+            # Set the project where this run will be logged
+            group="Transfer Learning , pre-trained encoder",
+            project="NN4I_Ex2 ",
+            name=f"{DESCRIPTION} {RUN} D{d}",
+            notes='',
+            # Track hyperparameters and run metadata
+            config={
+                "learning_rate": LR,
+                "architecture": "AE",
+                "dataset": "MNIST",
+                "epochs": EPOCHS,
+
+            })
 
 
 def load_data(batch_size=DATA_FRACTION):
@@ -232,7 +249,8 @@ def train_mlp_and_test(trainloader, testloader, d=D):
     learnable_mlp = MLP(d).to(device)
 
     non_learnable_encoder = Encoder(d).to(device)
-    non_learnable_encoder.load_state_dict(torch.load(f'./models/encoder{RUN}_{d}D.pth'))  # "pretrained"
+    # non_learnable_encoder.load_state_dict(torch.load(f'./models/encoder{RUN}_{d}D.pth'))  # "pretrained"
+    non_learnable_encoder.load_state_dict(torch.load(f'./models/encoderAE_15D.pth'))  # "pretrained"
     non_learnable_encoder_mlp = MLP(d).to(device)
     for epoch in range(EPOCHS):
         train_losses = train(trainloader, learnable_encoder, learnable_mlp, non_learnable_encoder,
@@ -243,24 +261,6 @@ def train_mlp_and_test(trainloader, testloader, d=D):
             wandb.log({"Full learning train loss": train_losses[0], 'MLP learning only train loss': train_losses[1],
                        "Full learning test loss": test_losses[0], 'MLP learning only test loss': test_losses[1]},
                       step=epoch)
-
-
-def init_w_and_b(d=D):
-    if WB:
-        wandb.init(
-            # Set the project where this run will be logged
-            group="Transfer Learning , pre-trained encoder",
-            project="NN4I_Ex2 ",
-            name=f"{DESCRIPTION} {RUN} D{d}",
-            notes='',
-            # Track hyperparameters and run metadata
-            config={
-                "learning_rate": LR,
-                "architecture": "AE",
-                "dataset": "MNIST",
-                "epochs": EPOCHS,
-
-            })
 
 
 def pre_train(trainloader, learnable_encoder, pre_trained_mlp):

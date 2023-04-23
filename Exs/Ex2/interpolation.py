@@ -7,14 +7,15 @@ import torch.nn.functional as F
 import torchvision.transforms as transforms
 import torchvision
 
-TRAIN = True
-# TRAIN = False
+# TRAIN = True
+TRAIN = False
 
 RUN = '3L'
 EPOCHS = 10
 LR = 1e-3
 DESCRIPTION = "Same d multiple number of layers"
-D = 3
+D = 100
+
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
@@ -95,7 +96,7 @@ def interpolate(encoder, decoder, trainloader, num_of_steps=25, same_img=False):
     if same_img:
         ei1, ei2, d1, d2 = same_img
     else:
-        ei1, ei2, d1, d2 = get_two_dif_digits(trainloader, encoder, (3, 2))
+        ei1, ei2, d1, d2 = get_two_dif_digits(trainloader, encoder)
     interpolations = []
     for alpha in alphas:
         interpolate_input = alpha * ei1 + (1 - alpha) * ei2

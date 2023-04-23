@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 import wandb
 
-# WB = False
-WB = True
+WB = False
+# WB = True
 
 PLOT = not WB
 
@@ -11,7 +11,7 @@ RUN = 'AE'
 EPOCHS = 10
 LR = 1e-3
 DESCRIPTION = "Latent_dimension_higher_dims"
-D = 10
+D = 15
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
@@ -174,6 +174,7 @@ def train_and_test(trainloader, testloader, d=D):
         test_loss = test(testloader, encoder, decoder)
         if WB:
             wandb.log({"train_loss": train_loss, 'test_loss': test_loss}, step=epoch)
+    torch.save(encoder.state_dict(), f'./models/encoder{RUN}_{d}D.pth')
     # if PLOT:
     #     plot_images(outputs)
 
@@ -198,7 +199,7 @@ def init_w_and_b(d=D):
 
 def main():
     trainloader, testloader = load_data()
-    for d in range(100, 110):
+    for d in range(15, 16):
         # set wandb new plot per current d value
         init_w_and_b(d)
         train_and_test(trainloader, testloader, d)
