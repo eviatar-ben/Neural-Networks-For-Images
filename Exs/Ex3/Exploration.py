@@ -1,23 +1,27 @@
-import Exs.utils as utils
+# Non-Saturating loss
+
 import numpy as np
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 import torchvision.utils as vutils
+import wandb
 
 WB = False
 # WB = True
 
 PLOT = not WB
-
-RUN = 'GAN'
+LOSSES = ["Original", "Non-saturation", "L2"]
+LOSS_TYPE = 2
+LOSS = LOSSES[LOSS_TYPE]
+RUN = f'{LOSS}_LOSS'
 EPOCHS = 10
 LR = 1e-3
-DESCRIPTION = "Latent_dimension_higher_dims"
+G_D_FACTOR = 4
+DESCRIPTION = f"GD_FACTOR{G_D_FACTOR}_RUN_{RUN}"
 D = 15
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-# checking the availability of cuda devices
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # input noise dimension
 nz = 100
 
@@ -90,9 +94,43 @@ class Generator(nn.Module):
         return output
 
 
+def init_w_and_b(group, project, d="", description="", run="", LR=1e-3, EPOCHS=10, architecture="GAN"):
+    wandb.init(
+        # settings=wandb.Settings(start_method="fork"),
+        # Set the project where this run will be logged
+        group=group,
+        project=project,
+        name=f"{description}{run}{d}",
+        notes='',
+        # Track hyperparameters and run metadata
+        config={
+            "learning_rate": LR,
+            "architecture": architecture,
+            "dataset": "MNIST",
+            "epochs": EPOCHS,
+        })
+
+
+def load_data(batch_size=64):
+    from torchvision import datasets, transforms
+
+    train_data = datasets.MNIST(root='./data', train=True, download=True, transform=transforms.ToTensor())
+
+    trainloader = torch.utils.data.DataLoader(dataset=train_data,
+                                              batch_size=batch_size,
+                                              shuffle=True)
+
+    test_data = datasets.MNIST(root='./data', train=False, download=True, transform=transforms.ToTensor())
+
+    testloader = torch.utils.data.DataLoader(dataset=test_data,
+                                             batch_size=batch_size,
+                                             shuffle=True)
+    return trainloader, testloader
+
+
 def train():
-    dataloader, _ = utils.load_data()
-    criterion = nn.BCELoss()
+    dataloader, _ = load_data()
+    criterion = nn.BCELoss()  # todo: maybe logit is required?
 
     netD = Discriminator(ngpu).to(device)
     netG = Generator(ngpu).to(device)
@@ -104,7 +142,9 @@ def train():
 
     for epoch in range(EPOCHS):
         for i, data in enumerate(dataloader, 0):
-
+            #############################################################
+            # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
+            ############################################################
             # train D with real
             netD.zero_grad()
             real_cpu = data[0].to(device)
@@ -112,8 +152,10 @@ def train():
             label = torch.full((batch_size,), real_label, device=device).to(torch.float32)
 
             output = netD(real_cpu)
-            # output = output.to(torch.float32)
-            errD_real = criterion(output, label)
+            if LOSS_TYPE == 2:
+                errD_real = 0.5 * torch.mean((output - label) ** 2)  # criterion(output, label)
+            else:
+                errD_real = criterion(output, label)
             errD_real.backward()
             D_x = output.mean().item()
 
@@ -122,37 +164,73 @@ def train():
             fake = netG(noise)
             label.fill_(fake_label)
             output = netD(fake.detach())
-            errD_fake = criterion(output, label)
+            if LOSS_TYPE == 2:
+                errD_fake = 0.5 * torch.mean((output - label) ** 2)  # criterion(output, label)
+            else:
+                errD_fake = criterion(output, label)
             errD_fake.backward()
             D_G_z1 = output.mean().item()
             errD = errD_real + errD_fake
             optimizerD.step()
 
+            ############################################################
+            # (2) Update G network:
+            # i.  minimize log(1-D(G(z))) equals maximize -log(1-D(G(z))) minimize -BCELoss(1-D(G(z)))
+            # ii. minimize -log(D(G(z))) equals maximize log(D(G(z))) minimize BCELoss(D(G(z)))
+            # iii. minimize (D(G(z))-1)^2
+            ############################################################
             # train G
-            netG.zero_grad()
-            label.fill_(real_label)
-            output = netD(fake)
-            errG = criterion(output, label)
-            errG.backward()
-            D_G_z2 = output.mean().item()
-            optimizerG.step()
+            if i % G_D_FACTOR == 0:
+                netG.zero_grad()
+                label.fill_(real_label)
+                output = netD(fake)
+                if LOSS_TYPE == 0:
+                    # original GAN loss
+                    label.fill_(fake_label)  # fake labels are real for generator cost
+                    errG = -criterion(output, label)  # note the negative sign
+
+                elif LOSS_TYPE == 1:
+                    # non-saturation GAN loss
+                    errG = criterion(output, label)
+
+                elif LOSS_TYPE == 2:
+                    # least squares
+                    errG = 0.5 * torch.mean((output - label) ** 2)
+                else:
+                    return
+
+                errG.backward()
+                D_G_z2 = output.mean().item()
+                optimizerG.step()
 
             print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f D(x): %.4f D(G(z)): %.4f / %.4f'
                   % (epoch, EPOCHS, i, len(dataloader),
                      errD.item(), errG.item(), D_x, D_G_z1, D_G_z2))
-            if i % 100 == 0:
-                vutils.save_image(real_cpu, 'output/real_samples.png', normalize=True)
-                fake = netG(fixed_noise)
-                vutils.save_image(fake.detach(), 'output/fake_samples_epoch_%03d.png' % (epoch), normalize=True)
-        torch.save(netG.state_dict(), '.models/weights/netG_epoch_%d.pth' % (epoch))
-        torch.save(netD.state_dict(), 'weights/netD_epoch_%d.pth' % (epoch))
+
+            # if i % 100 == 0:
+            #     vutils.save_image(real_cpu, 'output/real_samples.png', normalize=True)
+            #     fake = netG(fixed_noise)
+            #     vutils.save_image(fake.detach(),
+            #     f'output/fake_samples_epoch_{epoch}_iteration_{i}.png', normalize=True)
+
+            # if i % 100 == 0:
+            #
+            #     vutils.save_image(real_cpu, f'/content/drive/MyDrive/NN4I/{LOSS}/real_samples.png', normalize=True)
+            #     fake = netG(fixed_noise)
+            #     vutils.save_image(fake.detach(), f'/content/drive/MyDrive/NN4I/{LOSS}/fake_samples_epoch_{epoch}_iteration_{i}_loss_{LOSS}.png', normalize=True)
+
+        if WB:
+            wandb.log({"Loss_D": errD.item(), 'Loss_G': errG.item(), },
+                      step=epoch)
+            # wandb.log({"Loss_D": errD.item(), 'Loss_G': errG.item(),
+            #            "D(x)":D_x, "D(G(z))":D_G_z2 }, step=epoch)
 
 
 def main():
     if WB:
-        utils.init_w_and_b(project="NN4I_Ex3 ", group="Loss Saturation",
-                           d=DESCRIPTION, description=DESCRIPTION, run=RUN, LR=LR,
-                           EPOCHS=EPOCHS, architecture="GAN")
+        init_w_and_b(project="NN4I_Ex3 ", group="Loss Saturation",
+                     d=DESCRIPTION, description=DESCRIPTION, run=RUN, LR=LR,
+                     EPOCHS=EPOCHS, architecture="GAN")
     train()
 
 
